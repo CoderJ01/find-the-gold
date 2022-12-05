@@ -21,7 +21,7 @@ public class Main extends JFrame {
 
     public Main() {
         initialize();
-        setColor();
+        setGoldButton();
     }
 
     // initialize frame for game
@@ -48,7 +48,7 @@ public class Main extends JFrame {
     }
 
     // set one of the buttons to be gold
-    private void setColor() {
+    private void setGoldButton() {
         terrain[0][0].setOpaque(true);
         terrain[0][0].setBackground(Color.black);
     }
