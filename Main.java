@@ -24,6 +24,8 @@ public class Main extends JFrame {
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setSize(800, 500);
         frame.setLocationRelativeTo(null);
+        frame.setResizable(false); 
+        frame.pack();
 
         JPanel panel = new JPanel(new GridLayout(ROW, COL));
 
