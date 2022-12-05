@@ -3,6 +3,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 
 public class Main extends JFrame {
     // private static final int GRIDSIZE = 10; 
@@ -11,6 +12,12 @@ public class Main extends JFrame {
     // private TerrainButton[][] terrain = new TerrainButton[GRIDSIZE][GRIDSIZE];
 
     public static void main(String[] args) {
+        try {
+            // modify window appearance
+            String className = UIManager.getCrossPlatformLookAndFeelClassName();
+			UIManager.setLookAndFeel(className);
+        }
+        catch(Exception e) {}
         new Main();
     }
 
