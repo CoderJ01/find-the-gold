@@ -1,10 +1,12 @@
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
     private static final int ROW = 15;
@@ -40,7 +42,18 @@ public class Main extends JFrame {
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
                 terrain[row][col] = new TerrainButton(row, col);
-                panel.add(terrain[row][col]);
+
+                panel.add(terrain[row][col]); // add button
+
+                // listen for click
+				terrain[row][col].addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						TerrainButton button = (TerrainButton) e.getSource();
+						int row = button.getRow();
+						int col = button.getCol();
+						terrain[row][col].setRevealed(true);
+					}
+				});
             }
         }
         
