@@ -40,7 +40,7 @@ class TerrainButton extends JButton {
         return this.points;
     }
 
-    // setter
+    // setters
     public void setGold(boolean isGold) {
         this.isGold = isGold;
     }
