@@ -18,6 +18,7 @@ public class Main extends JFrame {
         initialize();
     }
 
+    // initialize frame for game
     private void initialize() {
         JFrame frame = new JFrame();
         frame.setTitle("Find the Gold");
