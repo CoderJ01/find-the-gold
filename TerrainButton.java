@@ -30,12 +30,12 @@ class TerrainButton extends JButton {
         return this.revealed;
     }
 
-    public boolean getGold() {
+    public boolean isGold() {
         return this.isGold;
     }
 
     // setter
-    public void setButton(boolean isGold) {
+    public void setGold(boolean isGold) {
         this.isGold = isGold;
     }
 }
