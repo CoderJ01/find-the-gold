@@ -2,6 +2,7 @@ import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import java.awt.Color;
 
 public class Main extends JFrame {
     private static final int ROW = 15;
@@ -20,6 +21,7 @@ public class Main extends JFrame {
 
     public Main() {
         initialize();
+        setColor();
     }
 
     // initialize frame for game
@@ -43,5 +45,10 @@ public class Main extends JFrame {
 
         frame.pack(); // size the frame so that all its contents are at or above their preferred sizes (i.e. make frame appear)
         frame.setVisible(true); // make frame visible
+    }
+
+    private void setColor() {
+        terrain[0][0].setOpaque(true);
+        terrain[0][0].setBackground(Color.black);
     }
 }
