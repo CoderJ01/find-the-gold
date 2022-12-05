@@ -1,7 +1,13 @@
-import javax.swing.*;
+import java.awt.GridLayout;
+
+import javax.swing.JFrame;
 import java.awt.*;
+ import java.applet.Applet;
 
 public class Main extends JFrame {
+    private static final int GRIDSIZE = 10;
+    private TerrainButton[][] terrain = new TerrainButton[GRIDSIZE][GRIDSIZE];
+
     public static void main(String[] args) {
         new Main();
     }
@@ -11,11 +17,6 @@ public class Main extends JFrame {
     }
 
     private void initialize() {
-        JPanel mainPanel = new JPanel();
-        mainPanel.setLayout(new BorderLayout());
-        setTitle("Find the Gold");
-        setSize(500, 500);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
+        
     }
 }
