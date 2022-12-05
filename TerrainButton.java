@@ -13,4 +13,20 @@ class TerrainButton extends JButton {
         Dimension size = new Dimension(50, 50);
         setPreferredSize(size);
     }
+
+    public int getRow() {
+        return this.row;
+    }
+
+    public int getCol() {
+        return this.col;
+    }
+
+    public boolean isRevealed() {
+        return this.revealed;
+    }
+
+    public void setButton(boolean isGold) {
+        this.isGold = isGold;
+    }
 }
