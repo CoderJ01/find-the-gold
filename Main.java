@@ -6,10 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.UIManager;
 
 public class Main extends JFrame {
-    // private static final int GRIDSIZE = 10; 
     private static final int ROW = 15;
     private static final int COL = 30;
-    // private TerrainButton[][] terrain = new TerrainButton[GRIDSIZE][GRIDSIZE];
+    private TerrainButton[][] terrain = new TerrainButton[ROW][COL];
 
     public static void main(String[] args) {
         try {
