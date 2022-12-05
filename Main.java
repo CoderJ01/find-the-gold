@@ -15,7 +15,6 @@ public class Main extends JFrame {
         mainPanel.setLayout(new BorderLayout());
         setTitle("Find the Gold");
         setSize(500, 500);
-        // setMinimunSize(new Dimension(300, 400));
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
