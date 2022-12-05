@@ -9,6 +9,7 @@ class TerrainButton extends JButton {
     private boolean isGold;
     private boolean revealed;
     private final int DIMENSION = 40;
+    private int points;
 
     // constructor
     public TerrainButton(int row, int col) {
@@ -35,6 +36,10 @@ class TerrainButton extends JButton {
         return this.isGold;
     }
 
+    public int getPoints() {
+        return this.points;
+    }
+
     // setter
     public void setGold(boolean isGold) {
         this.isGold = isGold;
@@ -49,5 +54,9 @@ class TerrainButton extends JButton {
                 setBackground(new Color(255, 215, 0));
             }
         }
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
     }
 }
