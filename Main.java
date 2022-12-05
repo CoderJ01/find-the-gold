@@ -1,6 +1,4 @@
 import java.awt.GridLayout;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -36,8 +34,8 @@ public class Main extends JFrame {
         // add buttons to panel
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
-                JButton button = new TerrainButton(row, col);
-                panel.add(button);
+                terrain[row][col] = new TerrainButton(row, col);
+                panel.add(terrain[row][col]);
             }
         }
         
