@@ -5,10 +5,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Main extends JFrame {
-    private static final int GRIDSIZE = 10;
+    // private static final int GRIDSIZE = 10; 
     private static final int ROW = 15;
     private static final int COL = 30;
-    private TerrainButton[][] terrain = new TerrainButton[GRIDSIZE][GRIDSIZE];
+    // private TerrainButton[][] terrain = new TerrainButton[GRIDSIZE][GRIDSIZE];
 
     public static void main(String[] args) {
         new Main();
@@ -21,14 +21,12 @@ public class Main extends JFrame {
     private void initialize() {
         JFrame frame = new JFrame();
         frame.setTitle("GridLayout");
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(800, 500);
-        frame.setLocationRelativeTo(null);
-        frame.setResizable(false); 
-        frame.pack();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit the application
+        frame.setResizable(false); // disable frame from being resized
 
         JPanel panel = new JPanel(new GridLayout(ROW, COL));
 
+        // add buttons to panel
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
                 JButton button = new TerrainButton(row, col);
@@ -36,9 +34,9 @@ public class Main extends JFrame {
             }
         }
         
-        frame.add(panel);
+        frame.add(panel); // add panel to frame
 
-        frame.pack();
-        frame.setVisible(true);
+        frame.pack(); // size the frame so that all its contents are at or above their preferred sizes (i.e. make frame appear)
+        frame.setVisible(true); // make frame visible
     }
 }
