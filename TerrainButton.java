@@ -2,11 +2,13 @@ import javax.swing.JButton;
 import java.awt.Dimension;
 
 class TerrainButton extends JButton {
+    // fields
     private int row = 0;
     private int col = 0;
     private boolean isGold;
     private boolean revealed;
 
+    // constructor
     public TerrainButton(int row, int col) {
         this.row = row;
         this.col = col;
@@ -14,6 +16,7 @@ class TerrainButton extends JButton {
         setPreferredSize(size);
     }
 
+    // getters
     public int getRow() {
         return this.row;
     }
@@ -26,6 +29,7 @@ class TerrainButton extends JButton {
         return this.revealed;
     }
 
+    // setter
     public void setButton(boolean isGold) {
         this.isGold = isGold;
     }
