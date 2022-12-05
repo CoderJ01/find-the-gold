@@ -65,11 +65,8 @@ public class Main extends JFrame {
 
     // set one of the buttons to be gold
     private void setGoldButton() {
-    //    int row = rand.nextInt(ROW);
-    //    int col = rand.nextInt(COL);
-       terrain[0][0].setGold(true); 
-    //    Color gold = new Color(255, 215, 0);
-    //    terrain[row][col].setOpaque(true);
-    //    terrain[row][col].setBackground(gold);
+       int row = rand.nextInt(ROW);
+       int col = rand.nextInt(COL);
+       terrain[row][col].setGold(true); 
     }
 }
