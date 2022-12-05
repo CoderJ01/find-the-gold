@@ -7,12 +7,13 @@ class TerrainButton extends JButton {
     private int col = 0;
     private boolean isGold;
     private boolean revealed;
+    private final int DIMENSION = 40;
 
     // constructor
     public TerrainButton(int row, int col) {
         this.row = row;
         this.col = col;
-        Dimension size = new Dimension(50, 50);
+        Dimension size = new Dimension(DIMENSION, DIMENSION);
         setPreferredSize(size);
     }
 
