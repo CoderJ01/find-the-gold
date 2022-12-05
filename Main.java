@@ -1,4 +1,6 @@
 import java.awt.GridLayout;
+import java.util.Random;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -8,6 +10,7 @@ public class Main extends JFrame {
     private static final int ROW = 15;
     private static final int COL = 30;
     private TerrainButton[][] terrain = new TerrainButton[ROW][COL];
+    private Random rand = new Random();
 
     public static void main(String[] args) {
         try {
@@ -49,7 +52,11 @@ public class Main extends JFrame {
 
     // set one of the buttons to be gold
     private void setGoldButton() {
-        terrain[0][0].setOpaque(true);
-        terrain[0][0].setBackground(Color.black);
+       int row = rand.nextInt(ROW);
+       int col = rand.nextInt(COL);
+       terrain[row][col].setGold(true); 
+       Color gold = new Color(255, 215, 0);
+       terrain[row][col].setOpaque(true);
+       terrain[row][col].setBackground(gold);
     }
 }
