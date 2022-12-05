@@ -1,5 +1,6 @@
 import javax.swing.JButton;
 import java.awt.Dimension;
+import java.awt.Color;
 
 class TerrainButton extends JButton {
     // fields
@@ -41,5 +42,12 @@ class TerrainButton extends JButton {
 
     public void setRevealed(boolean revealed) {
         this.revealed = true;
+
+        if(this.revealed == true) {
+            if(isGold()) {
+                setOpaque(true);
+                setBackground(new Color(255, 215, 0));
+            }
+        }
     }
 }
