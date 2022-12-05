@@ -47,6 +47,7 @@ public class Main extends JFrame {
         frame.setVisible(true); // make frame visible
     }
 
+    // set one of the buttons to be gold
     private void setColor() {
         terrain[0][0].setOpaque(true);
         terrain[0][0].setBackground(Color.black);
