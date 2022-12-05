@@ -20,7 +20,7 @@ public class Main extends JFrame {
 
     private void initialize() {
         JFrame frame = new JFrame();
-        frame.setTitle("GridLayout");
+        frame.setTitle("Find the Gold");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit the application
         frame.setResizable(false); // disable frame from being resized
 
