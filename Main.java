@@ -9,8 +9,8 @@ import java.awt.Color;
 public class Main extends JFrame {
     private static final int ROW = 15;
     private static final int COL = 30;
-    private TerrainButton[][] terrain = new TerrainButton[ROW][COL];
-    private Random rand = new Random();
+    private static TerrainButton[][] terrain = new TerrainButton[ROW][COL];
+    private static Random rand = new Random();
 
     public static void main(String[] args) {
         try {
