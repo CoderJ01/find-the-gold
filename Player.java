@@ -57,32 +57,40 @@ public class Player {
         }); 
     }
 
-    private Color colorObject() {
-        Color color = null;
+    private Color[] colorObject() {
+        Color[] colors = new Color[2];
         if(this.color == "blue") {
-            color = new Color(0, 0, 225);
+            colors[0] = new Color(0, 0, 225);
+            colors[1] = new Color(255, 255, 225);
         }
         else if(this.color == "brown") {
-            color = new Color(100, 38, 14);
+            colors[0] = new Color(100, 38, 14);
+            colors[1] = new Color(255, 255, 225);
         }
         else if(this.color == "gray") {
-            color = new Color(128, 128, 128);
+            colors[0] = new Color(128, 128, 128);
+            colors[1] = new Color(255, 255, 225);
         }
         else if(this.color == "green") {
-            color = new Color(0, 128, 0);
+            colors[0] = new Color(0, 128, 0);
+            colors[1] = new Color(255, 255, 225);
         }
         else if(this.color == "orange") {
-            color = new Color(255, 95, 31);
+            colors[0] = new Color(255, 95, 31);
+            colors[1] = new Color(0, 0, 0);
         }
         else if(this.color == "purple") {
-            color = new Color(128, 0, 128);
+            colors[0] = new Color(128, 0, 128);
+            colors[1] = new Color(255, 255, 225);
         }
         else if(this.color == "red") {
-            color = new Color(255, 0, 0);
+            colors[0] = new Color(255, 0, 0);
+            colors[1] = new Color(0, 0, 0);
         }
         else if(this.color == "yellow") {
-            color = new Color(255, 255, 0);
+            colors[0] = new Color(255, 255, 0);
+            colors[1] = new Color(0, 0, 0);
         }
-        return color;
+        return colors;
     }
 }

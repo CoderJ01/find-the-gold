@@ -54,7 +54,7 @@ public final class TerrainButton extends JButton {
         this.pointsSet = true;
     }
 
-    public void setRevealed(boolean revealed, Color color) {
+    public void setRevealed(boolean revealed, Color[] colors) {
         this.revealed = true;
 
         if(this.revealed == true) {
@@ -63,7 +63,8 @@ public final class TerrainButton extends JButton {
                 setBackground(new Color(255, 215, 0));
             }
             else {
-                setBackground(color);
+                setForeground(colors[1]);
+                setBackground(colors[0]);
             }
             setText("" + this.points);
         }
