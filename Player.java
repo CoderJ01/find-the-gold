@@ -45,11 +45,15 @@ public class Player {
     public void selectButton(TerrainButton[][] terrain, int row, int col) {   
         terrain[row][col].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                TerrainButton button = (TerrainButton) e.getSource();
-                int row = button.getRow();
-                int col = button.getCol();
-                terrain[row][col].setRevealed(true, colorObject());
-            }
+                // if(getTurn() == 0) {
+                    TerrainButton button = (TerrainButton) e.getSource();
+                    int row = button.getRow();
+                    int col = button.getCol();
+                    terrain[row][col].setRevealed(true, colorObject());
+                }
+                // setTurn();
+                // System.out.println();
+            // }
         }); 
     }
 
