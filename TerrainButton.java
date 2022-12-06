@@ -1,6 +1,5 @@
-import javax.swing.JButton;
-import java.awt.Dimension;
-import java.awt.Color;
+import java.awt.*;
+import javax.swing.*;
 
 class TerrainButton extends JButton {
     // fields
@@ -10,6 +9,7 @@ class TerrainButton extends JButton {
     private boolean revealed;
     private final int DIMENSION = 40;
     private int points;
+    private boolean pointsSet; // keep track of whether or not points are set for button
 
     // constructor
     public TerrainButton(int row, int col) {
@@ -17,6 +17,7 @@ class TerrainButton extends JButton {
         this.col = col;
         Dimension size = new Dimension(DIMENSION, DIMENSION);
         setPreferredSize(size);
+        setMargin(new Insets(0, 0, 0, 0)); // make three dots disappear for points display
     }
 
     // getters
@@ -40,9 +41,17 @@ class TerrainButton extends JButton {
         return this.points;
     }
 
+    public boolean arePointsSet() {
+        return this.pointsSet;
+    }
+
     // setters
     public void setGold(boolean isGold) {
         this.isGold = isGold;
+    }
+
+    public void setPoints(boolean pointsSet) {
+        this.pointsSet = true;
     }
 
     public void setRevealed(boolean revealed) {
@@ -52,11 +61,16 @@ class TerrainButton extends JButton {
             if(isGold()) {
                 setOpaque(true);
                 setBackground(new Color(255, 215, 0));
+                setText("" + this.points);
+            }
+            else {
+                setText("" + this.points);
             }
         }
     }
 
     public void setPoints(int points) {
         this.points = points;
+        setPoints(true);
     }
 }
