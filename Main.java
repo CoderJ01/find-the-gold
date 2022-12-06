@@ -13,6 +13,7 @@ public final class Main extends JFrame {
     private static TerrainButton[][] terrain = new TerrainButton[ROW][COL];
     private static Random rand = new Random();
     private static List<Player> players = new ArrayList<>();
+    private static List<String> colors = new ArrayList<>();
 
     public static void main(String[] args) {
         try {
@@ -25,10 +26,23 @@ public final class Main extends JFrame {
     }
 
     public Main() {
+        colors();
         addPlayers();
         initialize();
         setGoldButton();
         setButtonPoints();
+    }
+
+    // colors
+    private static void colors() {
+        colors.add("blue");
+        colors.add("brown");
+        colors.add("gray");
+        colors.add("green");
+        colors.add("orange");
+        colors.add("purple");
+        colors.add("red");
+        colors.add("yellow");
     }
 
     private static void addPlayers() {
