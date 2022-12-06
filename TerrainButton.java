@@ -58,15 +58,14 @@ public final class TerrainButton extends JButton {
         this.revealed = true;
 
         if(this.revealed == true) {
+            setOpaque(true);
             if(isGold()) {
-                setOpaque(true);
                 setBackground(new Color(255, 215, 0));
-                setText("" + this.points);
             }
             else {
                 setBackground(color);
-                setText("" + this.points);
             }
+            setText("" + this.points);
         }
     }
 
