@@ -1,17 +1,18 @@
 import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
     private static final int COL = 30;
     private static TerrainButton[][] terrain = new TerrainButton[ROW][COL];
     private static Random rand = new Random();
+    private static List<Player> players = new ArrayList<>();
 
     public static void main(String[] args) {
         try {
@@ -24,9 +25,14 @@ public final class Main extends JFrame {
     }
 
     public Main() {
+        addPlayers();
         initialize();
         setGoldButton();
         setButtonPoints();
+    }
+
+    private static void addPlayers() {
+        players.add(new Player("Joshua"));
     }
 
     // initialize frame for game
@@ -45,15 +51,7 @@ public final class Main extends JFrame {
 
                 panel.add(terrain[row][col]); // add button
 
-                // listen for click
-				terrain[row][col].addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						TerrainButton button = (TerrainButton) e.getSource();
-						int row = button.getRow();
-						int col = button.getCol();
-						terrain[row][col].setRevealed(true);
-					}
-				});
+                players.get(0).selectButton(terrain, row, col);
             }
         }
         

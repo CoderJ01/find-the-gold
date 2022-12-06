@@ -1,3 +1,6 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Player {
     // fields
     private final String PLAYER_NAME;
@@ -30,6 +33,14 @@ public class Player {
 
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int row, int col) {
-
+        // listen for click
+        terrain[row][col].addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                TerrainButton button = (TerrainButton) e.getSource();
+                int row = button.getRow();
+                int col = button.getCol();
+                terrain[row][col].setRevealed(true);
+            }
+        });
     }
 }
