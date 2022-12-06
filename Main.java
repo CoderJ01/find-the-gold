@@ -79,8 +79,13 @@ public final class Main extends JFrame {
         frame.pack(); // size the frame so that all its contents are at or above their preferred sizes (i.e. make frame appear)
         frame.setVisible(true); // make frame visible
 
-        // playerTurn(0);
-        // playerTurn(1);
+    
+        for(int row = 0; row < ROW; row++) {
+            for(int col = 0; col < COL; col++) {      
+              players.get(0).selectButton(terrain, row, col);
+              players.get(1).selectButton(terrain, row, col);
+            }
+        }
     }
 
     // set one of the buttons to be gold
@@ -142,20 +147,4 @@ public final class Main extends JFrame {
             }
         }
     }
-
-    // public void actionPerformed(ActionEvent e) {
-    //     TerrainButton button = (TerrainButton) e.getSource();
-    //     int row = button.getRow();
-    //     int col = button.getCol();
-    //     Color[] colors = {Color.black, Color.white};
-    //     terrain[row][col].setRevealed(true, colors);
-    // }
-
-    // public static void playerTurn(int turn) {
-    //     for(int row = 0; row < ROW; row++) {
-    //         for(int col = 0; col < COL; col++) {      
-    //           players.get(turn).selectButton(terrain, row, col);
-    //         }
-    //     }
-    // } 
 }
