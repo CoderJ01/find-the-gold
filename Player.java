@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 
 public class Player {
     // fields
@@ -39,8 +40,37 @@ public class Player {
                 TerrainButton button = (TerrainButton) e.getSource();
                 int row = button.getRow();
                 int col = button.getCol();
-                terrain[row][col].setRevealed(true);
+                terrain[row][col].setRevealed(true, colorObject());
             }
         });
+    }
+
+    private Color colorObject() {
+        Color color = null;
+        if(this.color == "blue") {
+            color = new Color(0, 0, 225);
+        }
+        else if(this.color == "brown") {
+            color = new Color(100, 38, 14);
+        }
+        else if(this.color == "gray") {
+            color = new Color(128, 128, 128);
+        }
+        else if(this.color == "green") {
+            color = new Color(0, 128, 0);
+        }
+        else if(this.color == "orange") {
+            color = new Color(255, 95, 31);
+        }
+        else if(this.color == "purple") {
+            color = new Color(128, 0, 128);
+        }
+        else if(this.color == "red") {
+            color = new Color(255, 0, 0);
+        }
+        else if(this.color == "yellow") {
+            color = new Color(255, 255, 0);
+        }
+        return color;
     }
 }

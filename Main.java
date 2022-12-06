@@ -48,6 +48,9 @@ public final class Main extends JFrame {
     private static void addPlayers() {
         players.add(new Player("Joshua"));
         players.add(new Player("Kingston"));
+
+        players.get(0).setColor("blue");
+        players.get(0).setColor("green");
     }
 
     // initialize frame for game
