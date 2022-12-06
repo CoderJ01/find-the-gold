@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-final class TerrainButton extends JButton {
+public final class TerrainButton extends JButton {
     // fields
     private int row = 0;
     private int col = 0;
