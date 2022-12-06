@@ -7,7 +7,7 @@ import javax.swing.UIManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main extends JFrame {
+public final class Main extends JFrame {
     private static final int ROW = 15;
     private static final int COL = 30;
     private static TerrainButton[][] terrain = new TerrainButton[ROW][COL];
