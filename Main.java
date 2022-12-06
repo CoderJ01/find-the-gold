@@ -30,7 +30,7 @@ public class Main extends JFrame {
     }
 
     // initialize frame for game
-    private void initialize() {
+    private static void initialize() {
         JFrame frame = new JFrame();
         frame.setTitle("Find the Gold");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit the application
@@ -64,14 +64,14 @@ public class Main extends JFrame {
     }
 
     // set one of the buttons to be gold
-    private void setGoldButton() {
+    private static void setGoldButton() {
        int row = rand.nextInt(ROW);
        int col = rand.nextInt(COL);
        terrain[row][col].setGold(true); 
     }
 
     // set the amount of poinst for each button
-    private void setButtonPoints() {
+    private static void setButtonPoints() {
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
                 if(terrain[row][col].isGold()) {
