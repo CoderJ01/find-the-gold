@@ -1,6 +1,6 @@
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+// import java.awt.event.ActionEvent;
+// import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,7 +8,7 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import java.awt.Color;
+// import java.awt.Color;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
