@@ -1,4 +1,6 @@
 import java.awt.GridLayout;
+// import java.awt.event.ActionEvent;
+// import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -6,6 +8,7 @@ import java.util.Random;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+// import java.awt.Color;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
@@ -50,7 +53,7 @@ public final class Main extends JFrame {
         players.add(new Player("Kingston"));
 
         players.get(0).setColor("blue");
-        players.get(0).setColor("green");
+        players.get(1).setColor("green");
     }
 
     // initialize frame for game
@@ -68,8 +71,13 @@ public final class Main extends JFrame {
                 terrain[row][col] = new TerrainButton(row, col);
 
                 panel.add(terrain[row][col]); // add button
+            }
+        }
 
+        for(int row = 0; row < ROW; row++) {
+            for(int col = 0; col < COL; col++) {
                 players.get(0).selectButton(terrain, row, col);
+                players.get(1).selectButton(terrain, row, col);
             }
         }
         
@@ -112,10 +120,9 @@ public final class Main extends JFrame {
         points[11] = -20;
         points[12] = -10;
 
+        // sets point for each button
         int p = 0;
         int max = 8;
-
-        // sets point for each button
         while(p < points.length) {
             for(int i = 0; i < max; i++) {
                 int randRow = rand.nextInt(ROW);

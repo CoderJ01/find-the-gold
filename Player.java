@@ -34,7 +34,6 @@ public class Player {
 
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int row, int col) {
-        // listen for click
         terrain[row][col].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 TerrainButton button = (TerrainButton) e.getSource();
