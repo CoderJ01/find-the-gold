@@ -74,12 +74,8 @@ public final class Main extends JFrame {
             }
         }
 
-        for(int row = 0; row < ROW; row++) {
-            for(int col = 0; col < COL; col++) {
-                players.get(0).selectButton(terrain, row, col);
-                players.get(1).selectButton(terrain, row, col);
-            }
-        }
+        players.get(0).selectButton(terrain, ROW, COL);
+        players.get(1).selectButton(terrain, ROW, COL);
         
         frame.add(panel); // add panel to frame
 
