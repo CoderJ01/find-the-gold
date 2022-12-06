@@ -121,7 +121,7 @@ public final class Main extends JFrame {
         points[11] = -20;
         points[12] = -10;
 
-        // sets point for each button
+        // sets points for each button
         int p = 0;
         int max = 8;
         while(p < points.length) {
@@ -137,7 +137,7 @@ public final class Main extends JFrame {
             p++;
         }
 
-        // set remaining buttons
+        // set points for remaining buttons
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
                 if(!terrain[row][col].isPointsSet()) {
