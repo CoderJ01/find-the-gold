@@ -67,7 +67,7 @@ public class Main extends JFrame {
     private void setGoldButton() {
        int row = rand.nextInt(ROW);
        int col = rand.nextInt(COL);
-       terrain[0][0].setGold(true); 
+       terrain[row][col].setGold(true); 
     }
 
     // set the amount of poinst for each button
