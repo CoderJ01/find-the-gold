@@ -41,7 +41,7 @@ class TerrainButton extends JButton {
         return this.points;
     }
 
-    public boolean arePointsSet() {
+    public boolean isPointsSet() {
         return this.pointsSet;
     }
 

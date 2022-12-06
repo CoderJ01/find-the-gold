@@ -105,7 +105,7 @@ public class Main extends JFrame {
                 int randRow = rand.nextInt(ROW);
                 int randCol = rand.nextInt(COL);
                 // set points only if points have yet to be set
-                if(!terrain[randRow][randCol].arePointsSet()) {
+                if(!terrain[randRow][randCol].isPointsSet()) {
                     terrain[randRow][randCol].setPoints(points[p]);
                     terrain[randRow][randCol].setPoints(true);
                 }
@@ -116,7 +116,7 @@ public class Main extends JFrame {
         // set remaining buttons
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
-                if(!terrain[row][col].arePointsSet()) {
+                if(!terrain[row][col].isPointsSet()) {
                     terrain[row][col].setPoints(-5);
                     terrain[row][col].setPoints(true);
                 }
