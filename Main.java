@@ -33,6 +33,7 @@ public final class Main extends JFrame {
 
     private static void addPlayers() {
         players.add(new Player("Joshua"));
+        players.add(new Player("Kingston"));
     }
 
     // initialize frame for game
