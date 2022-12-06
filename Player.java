@@ -27,4 +27,9 @@ public class Player {
     public void setColor(String color) {
         this.color = color;
     }
+
+    // allow player to select button
+    public void selectButton(TerrainButton[][] terrain, int row, int col) {
+
+    }
 }
