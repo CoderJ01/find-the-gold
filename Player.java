@@ -7,6 +7,7 @@ public class Player {
     private final String PLAYER_NAME;
     private int points;
     private String color;
+    private int turn = 0;
 
     // constructor
     public Player(String name) {
@@ -27,19 +28,31 @@ public class Player {
         return this.color;
     }
 
+    public int getTurn() {
+        return this.turn;
+    }
+
     // setter
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public void setTurn() {
+        this.turn = 1;
     }
 
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int row, int col) {   
         terrain[row][col].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                TerrainButton button = (TerrainButton) e.getSource();
-                int row = button.getRow();
-                int col = button.getCol();
-                terrain[row][col].setRevealed(true, colorObject());
+                if(getTurn() == 0) {
+                    TerrainButton button = (TerrainButton) e.getSource();
+                    int row = button.getRow();
+                    int col = button.getCol();
+                    terrain[row][col].setRevealed(true, colorObject());
+                    setTurn();
+                    System.out.println(getTurn());
+                }
             }
         }); 
     }

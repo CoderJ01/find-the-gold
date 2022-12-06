@@ -71,9 +71,6 @@ public final class Main extends JFrame {
                 terrain[row][col] = new TerrainButton(row, col);
 
                 panel.add(terrain[row][col]); // add button
-                
-                players.get(0).selectButton(terrain, row, col);
-                players.get(1).selectButton(terrain, row, col);
             }
         }
 
@@ -81,6 +78,14 @@ public final class Main extends JFrame {
 
         frame.pack(); // size the frame so that all its contents are at or above their preferred sizes (i.e. make frame appear)
         frame.setVisible(true); // make frame visible
+
+        // add buttons to panel
+        for(int row = 0; row < ROW; row++) {
+            for(int col = 0; col < COL; col++) {             
+                players.get(0).selectButton(terrain, row, col);
+                players.get(1).selectButton(terrain, row, col);
+            }
+        }
     }
 
     // set one of the buttons to be gold
