@@ -63,8 +63,8 @@ public final class TerrainButton extends JButton {
                 setBackground(new Color(255, 215, 0));
             }
             else {
-                setForeground(colors[1]);
-                setBackground(colors[0]);
+                setForeground(colors[1]); // set color of text
+                setBackground(colors[0]); // set color of button
             }
             setText("" + this.points);
         }
