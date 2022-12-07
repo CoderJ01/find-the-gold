@@ -3,7 +3,7 @@ import java.util.concurrent.TimeUnit;
 
 public final class CPU extends Player {
     private Random rand = new Random(); // field
-    private int turnOver;
+    private boolean turnOver;
     
     // constructor
     public CPU(String name) {
@@ -14,20 +14,20 @@ public final class CPU extends Player {
     @Override
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         delay();
-        this.turnOver = 0;
+        this.turnOver = false;
         OUTER: while(getPoints() > 0) {
             for(int row = 0; row < rowMax; row++) {
                 for(int col = 0; col < colMax; col++) {     
-                    if(!terrain[row][col].isRevealed() && this.turnOver == 0) {
+                    if(!terrain[row][col].isRevealed() && !this.turnOver) {
                         row = rand.nextInt(Main.getRowMaximun());
                         col = rand.nextInt(Main.getColMaximun());
                         keepScore(terrain, row, col);
                         terrain[row][col].setRevealed(true, colorObject());
-                        this.turnOver++;
+                        this.turnOver = true;
                         if(terrain[row][col].isGold()) {
                             gameEnd(terrain, row, col);
                         } 
-                        if(this.turnOver == 1) {
+                        if(this.turnOver) {
                             break OUTER;
                         }  
                     }     
