@@ -29,7 +29,7 @@ public class Player {
         return this.color;
     }
 
-    public boolean turnOrNot() {
+    public boolean turnOver() {
         return this.turnOver;
     }
 
@@ -49,16 +49,14 @@ public class Player {
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         startTurn();
-        System.out.println(turnOrNot());
+        System.out.println(turnOver());
         OUTER: for(int row = 0; row < rowMax; row++) {
             for(int col = 0; col < colMax; col++) {
-                if(turnOrNot()) {
+                if(!turnOver()) {
                     terrain[row][col].addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                             // allow action performance only if player has more than 0 points
-                            int points = getPoints();
-                            System.out.println(turnOrNot());
-                            if(points > 0) {
+                            if(getPoints() > 0) {
                                 TerrainButton button = (TerrainButton) e.getSource();
                                 int row = button.getRow();
                                 int col = button.getCol();
@@ -67,7 +65,7 @@ public class Player {
                                 if(terrain[row][col].isGold()) {
                                     gameEnd(terrain, row, col);
                                 }
-                                System.out.println(turnOrNot());
+                                System.out.println(turnOver());
                                 // break OUTER;
                             }
                         }
