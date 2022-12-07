@@ -201,20 +201,31 @@ public final class Main extends JFrame {
 
     // have the player select a color
     private static String selectColor() {
-        System.out.println("Select a color");
-        // display colors
-        for(int i = 0; i < colors.size(); i++) {
-            System.out.println(colors.get(i));
+        String color = "";
+
+        OUTER: while(true) {
+            System.out.println("Select a color");
+            // display colors
+            for(int i = 0; i < colors.size(); i++) {
+                System.out.println(colors.get(i));
+            }
+            
+            color = input.next(); // player's selection
+
+            for(String colorChoice : colors) {
+                if(color.equals(colorChoice)){
+                    break OUTER;
+                }
+            }
         }
-        
-        String color = input.next(); // player's selection
-        
+
         // remove color that player picks
         for(int i = 0; i < colors.size(); i++) {
             if(color.equals(colors.get(i))) {
                 colors.remove(colors.get(i)); 
             }
         }
+        
         return color;
     }
 
