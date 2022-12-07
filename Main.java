@@ -238,7 +238,7 @@ public final class Main extends JFrame {
         return labels;
     }
 
-    // test only CPU players
+    // this allows the game to be played
     private static void gamePlay() {
         int c = 1;
         int maxPlayerIndex = (players.size() - 1);
