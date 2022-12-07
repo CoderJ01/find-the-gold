@@ -11,7 +11,6 @@ public class Player {
     private int points;
     private String color;
     // private int turn = 0;
-    private static boolean gameOver;
 
     // constructor
     public Player(String name) {
