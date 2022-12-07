@@ -40,15 +40,15 @@ public class Player {
             for(int col = 0; col < colMax; col++) {
                 terrain[row][col].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                            TerrainButton button = (TerrainButton) e.getSource();
-                            int row = button.getRow();
-                            int col = button.getCol();
-                            keepScore(terrain, row, col);
-                            terrain[row][col].setRevealed(true, colorObject());
-                            if(terrain[row][col].isGold()) {
-                                gameEnd(terrain, row, col);
-                            }
+                        TerrainButton button = (TerrainButton) e.getSource();
+                        int row = button.getRow();
+                        int col = button.getCol();
+                        keepScore(terrain, row, col);
+                        terrain[row][col].setRevealed(true, colorObject());
+                        if(terrain[row][col].isGold()) {
+                            gameEnd(terrain, row, col);
                         }
+                    }
                 }); 
             }
         }
