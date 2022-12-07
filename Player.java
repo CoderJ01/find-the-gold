@@ -36,7 +36,7 @@ public class Player {
 
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
-        for(int row = 0; row < rowMax; row++) {
+        OUTER: for(int row = 0; row < rowMax; row++) {
             for(int col = 0; col < colMax; col++) {
                 terrain[row][col].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
@@ -48,11 +48,13 @@ public class Player {
                         if(terrain[row][col].isGold()) {
                             gameEnd(terrain, row, col);
                         }
+                        // break OUTER;
                     }
                 }); 
             }
         }
     }
+    
 
     protected final Color[] colorObject() {
         String[] labels = Main.getLabels();
