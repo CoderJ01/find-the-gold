@@ -96,7 +96,6 @@ public final class Main extends JFrame {
         }
 
         frame.add(panel); // add panel to frame
-
         frame.pack(); // size the frame so that all its contents are at or above their preferred sizes (i.e. make frame appear)
         frame.setVisible(true); // make frame visible
     }
