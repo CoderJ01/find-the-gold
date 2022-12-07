@@ -1,8 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JOptionPane;
-
 import java.awt.Color;
 
 public class Player {
@@ -10,7 +8,7 @@ public class Player {
     private final String PLAYER_NAME;
     private int points;
     private String color;
-    // private int turn = 0;
+    private int turn = 0;
 
     // constructor
     public Player(String name) {
@@ -31,18 +29,10 @@ public class Player {
         return this.color;
     }
 
-    // public int getTurn() {
-    //     return this.turn;
-    // }
-
     // setter
     public final void setColor(String color) {
         this.color = color;
     }
-
-    // public void setTurn() {
-    //     this.turn = 1;
-    // }
 
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int row, int col) {   
