@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 // import java.awt.Color;
+import java.util.Scanner;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
@@ -17,6 +18,7 @@ public final class Main extends JFrame {
     private static Random rand = new Random();
     private static List<Player> players = new ArrayList<>();
     private static List<String> colors = new ArrayList<>();
+    private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
         try {
@@ -49,7 +51,9 @@ public final class Main extends JFrame {
     }
 
     private static void addPlayers() {
-        players.add(new Player("Joshua"));
+        String name = enterName();
+
+        players.add(new Player(name));
         players.add(new Player("Kingston"));
 
         players.get(0).setColor("blue");
@@ -145,5 +149,12 @@ public final class Main extends JFrame {
                 }
             }
         }
+    }
+
+    // have player enter name
+    private static String enterName() {
+        System.out.print("Enter your name: ");
+        String name = input.next();
+        return name;
     }
 }
