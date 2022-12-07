@@ -58,9 +58,6 @@ public final class Main extends JFrame {
         players.add(new Player(name));
         players.add(new Player("Kingston"));
 
-        players.get(0).setColor("blue");
-        players.get(1).setColor("green");
-
         int numberOfOpponents = opponents(); // retrieve number of opponents
         
         String computerName = "CPU_";
@@ -68,6 +65,12 @@ public final class Main extends JFrame {
         for(int i = 1; i <= numberOfOpponents; i++) {
             players.add(new CPU(computerName + i));
         }
+
+        // have players select color
+        selectColor();
+
+        players.get(0).setColor("blue");
+        players.get(1).setColor("green");
     }
 
     // initialize frame for game
@@ -194,5 +197,24 @@ public final class Main extends JFrame {
             }
         }
         return numberOfOpponents;
+    }
+
+    // have the player select a color
+    private static String selectColor() {
+        System.out.println("Select a color");
+        // display colors
+        for(int i = 0; i < colors.size(); i++) {
+            System.out.println(colors.get(i));
+        }
+        
+        String color = input.next(); // player's selection
+        
+        // remove color that player picks
+        for(int i = 0; i < colors.size(); i++) {
+            if(color.equals(colors.get(i))) {
+                colors.remove(colors.get(i)); 
+            }
+        }
+        return color;
     }
 }
