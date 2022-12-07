@@ -33,10 +33,11 @@ public final class Main extends JFrame {
 
     public Main() {
         colors();
-        addPlayers();
         initialize();
         setGoldButton();
         setButtonPoints();
+        addPlayers();
+        testMethod();
     }
 
     // colors
@@ -52,24 +53,24 @@ public final class Main extends JFrame {
     }
 
     private static void addPlayers() {
-        // add all players
-        String name = enterName();
+        // // add all players
+        // String name = enterName();
 
-        players.add(new Player(name));
-        // players.add(new Player("Kingston"));
+        // players.add(new Player(name));
+        // // players.add(new Player("Kingston"));
 
-        int numberOfOpponents = opponents(); // retrieve number of opponents
+        // int numberOfOpponents = opponents(); // retrieve number of opponents
         
         String computerName = "CPU_";
         
-        for(int i = 1; i <= numberOfOpponents; i++) {
+        for(int i = 1; i <= 3; i++) {
             players.add(new CPU(computerName + i));
         }
 
         // have non-CPU player select color
-        String color = selectColor();
+        // String color = selectColor();
 
-        players.get(0).setColor(color);
+        // players.get(0).setColor(color);
 
         // have CPU players pick a color
         for(int i = 1; i < players.size(); i++) {
@@ -106,13 +107,6 @@ public final class Main extends JFrame {
 
         frame.pack(); // size the frame so that all its contents are at or above their preferred sizes (i.e. make frame appear)
         frame.setVisible(true); // make frame visible
-
-    
-        for(int row = 0; row < ROW; row++) {
-            for(int col = 0; col < COL; col++) {      
-              players.get(0).selectButton(terrain, row, col);
-            }
-        }
     }
 
     // set one of the buttons to be gold
@@ -247,5 +241,20 @@ public final class Main extends JFrame {
 
     public static int getColMaximun() {
         return COL;
+    }
+
+    // test only CPU players
+    private static void testMethod() {
+        int c = 1;
+        int maxPlayerIndex = (players.size() - 1);
+        while(true) {
+            players.get(c).selectButton(terrain, ROW, COL);
+            if(c < maxPlayerIndex) {
+                c++;
+            }
+            else if(c == maxPlayerIndex) {
+                c = 1;
+            }
+        }
     }
 }
