@@ -62,35 +62,35 @@ public class Player {
 
     protected final Color[] colorObject() {
         Color[] colors = new Color[2];
-        if(this.color == "blue") {
+        if(this.color.equals("blue")) {
             colors[0] = new Color(0, 0, 225);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color == "brown") {
+        else if(this.color.equals("brown")) {
             colors[0] = new Color(100, 38, 14);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color == "gray") {
+        else if(this.color.equals("gray")) {
             colors[0] = new Color(128, 128, 128);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color == "green") {
+        else if(this.color.equals("green")) {
             colors[0] = new Color(0, 128, 0);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color == "orange") {
+        else if(this.color.equals("orange")) {
             colors[0] = new Color(255, 95, 31);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color == "purple") {
+        else if(this.color.equals("purple")) {
             colors[0] = new Color(128, 0, 128);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color == "red") {
+        else if(this.color.equals("red")) {
             colors[0] = new Color(255, 0, 0);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color == "yellow") {
+        else if(this.color.equals("yellow")) {
             colors[0] = new Color(255, 255, 0);
             colors[1] = new Color(0, 0, 0);
         }
