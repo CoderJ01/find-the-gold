@@ -140,7 +140,6 @@ public class Player {
         } 
         else {
             this.points = 0;
-            System.out.println(PLAYER_NAME + " is OUT");
         }
     }
 
