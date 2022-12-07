@@ -8,7 +8,7 @@ public class Player {
     private final String PLAYER_NAME;
     private int points;
     private String color;
-    private int turn = 0;
+    private boolean turnOver;
 
     // constructor
     public Player(String name) {
@@ -29,8 +29,8 @@ public class Player {
         return this.color;
     }
 
-    public int turnOrNot() {
-        return this.turn;
+    public boolean turnOrNot() {
+        return this.turnOver;
     }
 
     // setter
@@ -39,11 +39,11 @@ public class Player {
     }
 
     public void startTurn() {
-        this.turn = 0;
+        this.turnOver = false;
     }
 
     public void endTurn() {
-        this.turn = 1;
+        this.turnOver = true;
     }
 
     // allow player to select button
@@ -52,12 +52,12 @@ public class Player {
         System.out.println(turnOrNot());
         OUTER: for(int row = 0; row < rowMax; row++) {
             for(int col = 0; col < colMax; col++) {
-                if(turnOrNot() == 0) {
+                if(turnOrNot()) {
                     terrain[row][col].addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                             // allow action performance only if player has more than 0 points
                             int points = getPoints();
-                            System.out.println(turn);
+                            System.out.println(turnOrNot());
                             if(points > 0) {
                                 TerrainButton button = (TerrainButton) e.getSource();
                                 int row = button.getRow();
