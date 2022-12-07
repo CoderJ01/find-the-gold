@@ -52,7 +52,7 @@ public final class Main extends JFrame {
     }
 
     private static void addPlayers() {
-        // add players
+        // add all players
         String name = enterName();
 
         players.add(new Player(name));
@@ -66,11 +66,10 @@ public final class Main extends JFrame {
             players.add(new CPU(computerName + i));
         }
 
-        // have players select color
+        // have non-CPU player select color
         String color = selectColor();
 
         players.get(0).setColor(color);
-        players.get(1).setColor("green");
 
         // have CPU players pick a color
         for(int i = 1; i < players.size(); i++) {
