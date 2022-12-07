@@ -117,10 +117,12 @@ public class Player {
         if(!terrain[row][col].isRevealed()) {
             this.points += terrain[row][col].getPoints();
         }
-        if(this.points <= 0) {
+        if(this.points > 0) {
+            System.out.println(this.PLAYER_NAME + " has " + this.points + " points remaining");
+        } 
+        else {
             this.points = 0;
         }
-        System.out.println(this.PLAYER_NAME + " has " + this.points + " points remaining");
     }
 
     // end the game when the player finds the gold
