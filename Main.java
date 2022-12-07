@@ -240,7 +240,7 @@ public final class Main extends JFrame {
 
     // this allows the game to be played
     private static void gamePlay() {
-        int c = 1;
+        int c = 0;
         int maxPlayerIndex = (players.size() - 1);
         while(true) {
             players.get(c).selectButton(terrain, ROW, COL);
@@ -248,7 +248,7 @@ public final class Main extends JFrame {
                 c++;
             }
             else if(c == maxPlayerIndex) {
-                c = 1;
+                c = 0;
             }
         }
     }

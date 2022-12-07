@@ -35,19 +35,23 @@ public class Player {
     }
 
     // allow player to select button
-    public void selectButton(TerrainButton[][] terrain, int row, int col) {   
-        terrain[row][col].addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                    TerrainButton button = (TerrainButton) e.getSource();
-                    int row = button.getRow();
-                    int col = button.getCol();
-                    keepScore(terrain, row, col);
-                    terrain[row][col].setRevealed(true, colorObject());
-                    if(terrain[row][col].isGold()) {
-                        gameEnd(terrain, row, col);
-                    }
-                }
-        }); 
+    public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
+        for(int row = 0; row < rowMax; row++) {
+            for(int col = 0; col < colMax; col++) {
+                terrain[row][col].addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                            TerrainButton button = (TerrainButton) e.getSource();
+                            int row = button.getRow();
+                            int col = button.getCol();
+                            keepScore(terrain, row, col);
+                            terrain[row][col].setRevealed(true, colorObject());
+                            if(terrain[row][col].isGold()) {
+                                gameEnd(terrain, row, col);
+                            }
+                        }
+                }); 
+            }
+        }
     }
 
     protected final Color[] colorObject() {
