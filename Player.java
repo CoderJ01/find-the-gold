@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Player {
     // fields
@@ -12,6 +11,7 @@ public class Player {
     private int points;
     private String color;
     // private int turn = 0;
+    private static boolean gameOver;
 
     // constructor
     public Player(String name) {
@@ -54,6 +54,9 @@ public class Player {
                     int col = button.getCol();
                     keepScore(terrain, row, col);
                     terrain[row][col].setRevealed(true, colorObject());
+                    if(terrain[row][col].isGold()) {
+                        gameEnd(terrain, row, col);
+                    }
                 }
         }); 
     }
@@ -104,7 +107,6 @@ public class Player {
             this.points = 0;
         }
         System.out.println(this.points);
-        gameEnd(terrain, row, col);
     }
 
     // end the game when the player finds the gold
@@ -112,6 +114,7 @@ public class Player {
         if(terrain[row][col].isGold()) {
             String message = this.PLAYER_NAME + " has found the gold. The game is over";
             JOptionPane.showMessageDialog(null, message);
+            System.exit(0);
         }
     }
 }
