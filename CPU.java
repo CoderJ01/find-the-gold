@@ -2,9 +2,8 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public final class CPU extends Player {
-    // fields
-    private Random rand = new Random();
-    private boolean turnOver;
+    
+    private Random rand = new Random(); // field
     
     // constructor
     public CPU(String name) {
@@ -15,20 +14,20 @@ public final class CPU extends Player {
     @Override
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         delay();
-        this.turnOver = false;
+        startTurn();
         OUTER: while(getPoints() > 0) {
             for(int row = 0; row < rowMax; row++) {
                 for(int col = 0; col < colMax; col++) {     
-                    if(!terrain[row][col].isRevealed() && !this.turnOver) {
+                    if(!terrain[row][col].isRevealed() && !turnOver()) {
                         row = rand.nextInt(Main.getRowMaximun());
                         col = rand.nextInt(Main.getColMaximun());
                         keepScore(terrain, row, col);
                         terrain[row][col].setRevealed(true, colorObject());
-                        this.turnOver = true;
+                        endTurn();
                         if(terrain[row][col].isGold()) {
                             gameEnd(terrain, row, col);
                         } 
-                        if(this.turnOver) {
+                        if(turnOver()) {
                             break OUTER;
                         }  
                     }     
