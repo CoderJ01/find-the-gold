@@ -11,7 +11,7 @@ public final class CPU extends Player {
     // have CPU select button
     @Override
     public void selectButton(TerrainButton[][] terrain, int row, int col) {   
-        if(!terrain[row][col].isRevealed()) {
+        if(terrain[row][col].isRevealed()) {
             row = rand.nextInt(Main.getRowMaximun());
             col = rand.nextInt(Main.getColMaximun());
             keepScore(terrain, row, col);
