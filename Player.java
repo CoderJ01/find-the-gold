@@ -136,7 +136,7 @@ public class Player {
             this.points += terrain[row][col].getPoints();
         }
         if(this.points > 0) {
-            System.out.println(this.PLAYER_NAME + " has " + this.points + " points remaining");
+            System.out.println(PLAYER_NAME + " has " + this.points + " points remaining");
         } 
         else {
             this.points = 0;
@@ -146,7 +146,7 @@ public class Player {
     // end the game when the player finds the gold
     protected final void gameEnd(TerrainButton[][] terrain, int row, int col) {
         if(terrain[row][col].isGold()) {
-            String message = this.PLAYER_NAME + " has found the gold. The game is over.";
+            String message = PLAYER_NAME + " has found the gold. The game is over.";
             JOptionPane.showMessageDialog(null, message);
             System.exit(0);
         }
