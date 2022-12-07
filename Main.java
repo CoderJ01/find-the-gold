@@ -201,7 +201,7 @@ public final class Main extends JFrame {
         String color = "";
 
         OUTER: while(true) {
-            System.out.println("Select a color");
+            System.out.println("\nSelect a color");
             // display colors
             for(int i = 0; i < colors.size(); i++) {
                 System.out.println(colors.get(i));
