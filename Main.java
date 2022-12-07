@@ -48,9 +48,15 @@ public final class Main extends JFrame {
     }
 
     private static void addPlayers() {
-        // add all players
-        String name = enterName();
+        
+        String name = enterName(); // retrieve player's name
 
+        // inquire if player wants to view rules
+        if(viewOrNo(name)) {
+            gameRules(); // describe rules of game
+        }
+
+        // add players
         players.add(new Player(name));
 
         int numberOfOpponents = opponents(); // retrieve number of opponents
@@ -259,6 +265,39 @@ public final class Main extends JFrame {
             else if(c == maxPlayerIndex) {
                 c = 0;
             }
+        }
+    }
+
+    // describe the rules if the game
+    private static void gameRules() {
+        System.out.println("\nRULES");
+        System.out.println("*****");
+        System.out.println("The objective of this game is to be the first player to find the gold button. All players start out");
+        System.out.println("with 5000 points. Everytime a player selects a button that is not the gold button, the player will lose");
+        System.out.println("points. The amount of points lost depends on the particular button. If a player loses all 5000 points, the");
+        System.out.println("player is out of the game.");
+
+        // confirm that player understands the rules
+        String confirmation = "";
+        while(true) {
+            System.out.print("\nEnter 'y' to confirm that you understand the rules: ");
+            confirmation = input.next();
+            if(confirmation.equals("y")) {
+                break;
+            }
+        }
+    }
+
+    // ask if player would like to see the rules
+    private static boolean viewOrNo(String name) {
+        String view = "";
+        System.out.print("\nHello " + name + ", would you like to view the rules of the game? If you would, enter 'y'. If not, enter any other key: ");
+        view = input.next();
+        if(view.equals("y")) {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 }
