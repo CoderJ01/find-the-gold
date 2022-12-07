@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public final class CPU extends Player {
-    // field
+    // fields
     private Random rand = new Random();
     private boolean turnOver;
     
