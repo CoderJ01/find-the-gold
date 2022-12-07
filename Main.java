@@ -56,7 +56,7 @@ public final class Main extends JFrame {
         String name = enterName();
 
         players.add(new Player(name));
-        players.add(new Player("Kingston"));
+        // players.add(new Player("Kingston"));
 
         int numberOfOpponents = opponents(); // retrieve number of opponents
         
@@ -71,6 +71,16 @@ public final class Main extends JFrame {
 
         players.get(0).setColor(color);
         players.get(1).setColor("green");
+
+        for(int i = 1; i < players.size(); i++) {
+            int pick = rand.nextInt(colors.size());
+            players.get(i).setColor(colors.get(pick));
+            colors.remove(colors.get(pick));
+        }
+
+        for(int i = 0; i < players.size(); i++) {
+            System.out.println(players.get(i).getPlayerName() + "'s color is " + players.get(i).getColor());
+        }
     }
 
     // initialize frame for game
