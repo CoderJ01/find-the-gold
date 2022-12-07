@@ -56,7 +56,7 @@ public class Player {
                     terrain[row][col].addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
                             // allow action performance only if player has more than 0 points
-                            if(getPoints() > 0) {
+                            if(getPoints() > 0 && !turnOver()) {
                                 TerrainButton button = (TerrainButton) e.getSource();
                                 int row = button.getRow();
                                 int col = button.getCol();
@@ -65,6 +65,7 @@ public class Player {
                                 if(terrain[row][col].isGold()) {
                                     gameEnd(terrain, row, col);
                                 }
+                                endTurn();
                                 System.out.println(turnOver());
                             }
                         }
