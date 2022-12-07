@@ -171,7 +171,7 @@ public final class Main extends JFrame {
     private static int opponents() {
         int numberOfOpponents = 0;
         boolean error = false;
-        int min = 0, max = 9;
+        int min = 1, max = 9;
 
         while(true) {
             // check for appropiate data type
