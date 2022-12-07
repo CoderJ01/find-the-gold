@@ -41,12 +41,14 @@ public final class Main extends JFrame {
     private static void colors() {
         colors.add("blue");
         colors.add("brown");
+        colors.add("cream");
+        colors.add("cyan");
         colors.add("gray");
         colors.add("green");
+        colors.add("magenta");
         colors.add("orange");
         colors.add("purple");
         colors.add("red");
-        colors.add("yellow");
     }
 
     private static void addPlayers() {
@@ -176,7 +178,7 @@ public final class Main extends JFrame {
     private static int opponents() {
         int numberOfOpponents = 0;
         boolean error = false;
-        int min = 0, max = 7;
+        int min = 0, max = 9;
 
         while(true) {
             // check for appropiate data type

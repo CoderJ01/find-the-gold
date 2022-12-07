@@ -90,8 +90,16 @@ public class Player {
             colors[0] = new Color(255, 0, 0);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color.equals("yellow")) {
-            colors[0] = new Color(255, 255, 143);
+        else if(this.color.equals("cream")) {
+            colors[0] = new Color(255, 250, 160);
+            colors[1] = new Color(0, 0, 0);
+        }
+        else if(this.color.equals("magenta")) {
+            colors[0] = new Color(255, 0, 143);
+            colors[1] = new Color(0, 0, 0);
+        }
+        else if(this.color.equals("cyan")) {
+            colors[0] = new Color(0, 255, 255);
             colors[1] = new Color(0, 0, 0);
         }
         return colors;
