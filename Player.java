@@ -50,7 +50,7 @@ public class Player {
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         startTurn();
         System.out.println(turnOver());
-        OUTER: for(int row = 0; row < rowMax; row++) {
+        for(int row = 0; row < rowMax; row++) {
             for(int col = 0; col < colMax; col++) {
                 if(!turnOver()) {
                     terrain[row][col].addActionListener(new ActionListener() {
