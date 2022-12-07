@@ -105,7 +105,7 @@ public class Player {
         if(this.points <= 0) {
             this.points = 0;
         }
-        System.out.println(this.points);
+        System.out.println(this.PLAYER_NAME + " has " + this.points + " points remaining");
     }
 
     // end the game when the player finds the gold

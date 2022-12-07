@@ -63,7 +63,7 @@ public final class Main extends JFrame {
         
         String computerName = "CPU_";
         
-        for(int i = 1; i <= 3; i++) {
+        for(int i = 1; i <= 7; i++) {
             players.add(new CPU(computerName + i));
         }
 

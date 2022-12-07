@@ -15,7 +15,7 @@ public final class CPU extends Player {
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         delay();
         this.turnOver = 0;
-        OUTER: while(true) {
+        OUTER: while(getPoints() > 0) {
             for(int row = 0; row < rowMax; row++) {
                 for(int col = 0; col < colMax; col++) {     
                     row = rand.nextInt(Main.getRowMaximun());
@@ -41,7 +41,7 @@ public final class CPU extends Player {
     private void delay() {
         try {
             // delay each output by less than a second
-            TimeUnit.SECONDS.sleep(1);
+            TimeUnit.MILLISECONDS.sleep(10);
         }
         catch(InterruptedException e) {
             System.out.println("Error");
