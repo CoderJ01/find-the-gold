@@ -31,6 +31,7 @@ public final class Main extends JFrame {
         new Main();
     }
 
+    // run game
     public Main() {
         colors();
         initialize();
