@@ -1,13 +1,9 @@
 import java.awt.GridLayout;
-// import java.awt.event.ActionEvent;
-// import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Random;
-// import java.awt.Color;
 import java.util.Scanner;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -38,7 +34,7 @@ public final class Main extends JFrame {
         setGoldButton();
         setButtonPoints();
         addPlayers();
-        testMethod();
+        gamePlay();
     }
 
     // colors
@@ -55,23 +51,22 @@ public final class Main extends JFrame {
 
     private static void addPlayers() {
         // // add all players
-        // String name = enterName();
+        String name = enterName();
 
-        // players.add(new Player(name));
-        // // players.add(new Player("Kingston"));
+        players.add(new Player(name));
 
-        // int numberOfOpponents = opponents(); // retrieve number of opponents
+        int numberOfOpponents = opponents(); // retrieve number of opponents
         
         String computerName = "CPU_";
         
-        for(int i = 1; i <= 7; i++) {
+        for(int i = 1; i <= numberOfOpponents; i++) {
             players.add(new CPU(computerName + i));
         }
 
         // have non-CPU player select color
-        // String color = selectColor();
+        String color = selectColor();
 
-        // players.get(0).setColor(color);
+        players.get(0).setColor(color);
 
         // have CPU players pick a color
         for(int i = 1; i < players.size(); i++) {
@@ -245,8 +240,8 @@ public final class Main extends JFrame {
     }
 
     // test only CPU players
-    private static void testMethod() {
-        int c = 1;
+    private static void gamePlay() {
+        int c = 0;
         int maxPlayerIndex = (players.size() - 1);
         while(true) {
             players.get(c).selectButton(terrain, ROW, COL);
