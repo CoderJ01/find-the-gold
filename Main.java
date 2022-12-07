@@ -205,12 +205,13 @@ public final class Main extends JFrame {
         String color = "";
 
         OUTER: while(true) {
-            System.out.println("\nSelect a color");
+            System.out.println("\nSelect a color: ");
             // display colors
             for(int i = 0; i < colors.size(); i++) {
-                System.out.println(colors.get(i));
+                System.out.println("- " + colors.get(i));
             }
             
+            System.out.print("selection: ");
             color = input.next(); // player's selection
 
             for(String colorChoice : colors) {
