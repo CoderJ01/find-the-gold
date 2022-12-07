@@ -18,8 +18,6 @@ public final class CPU extends Player {
         OUTER: while(getPoints() > 0) {
             for(int row = 0; row < rowMax; row++) {
                 for(int col = 0; col < colMax; col++) {     
-                    row = rand.nextInt(Main.getRowMaximun());
-                    col = rand.nextInt(Main.getColMaximun()); 
                     if(!terrain[row][col].isRevealed() && this.turnOver == 0) {
                         row = rand.nextInt(Main.getRowMaximun());
                         col = rand.nextInt(Main.getColMaximun());
