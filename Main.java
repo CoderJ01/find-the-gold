@@ -4,7 +4,9 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -71,10 +73,14 @@ public final class Main extends JFrame {
             colors.remove(colors.get(pick)); // pick is remove to prevent any duplicates
         }
 
+        String playerColors = "";
+
         // display each player's color
         for(int i = 0; i < players.size(); i++) {
-            System.out.println(players.get(i).getPlayerName() + "'s color is " + players.get(i).getColor());
+            playerColors += "\n" + players.get(i).getPlayerName() + "'s color is " + players.get(i).getColor();
         }
+
+        JOptionPane.showMessageDialog(null, playerColors);
     }
 
     // initialize frame for game
