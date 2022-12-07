@@ -81,7 +81,7 @@ public class Player {
         // blue
         if(this.color.equals(labels[0])) {
             colors[0] = new Color(0, 0, 225); // button color (e.g. blue)
-            colors[1] = new Color(255, 255, 225); // text color
+            colors[1] = new Color(255, 255, 225); // text color (either black or white)
         }
         // brown
         else if(this.color.equals(labels[1])) {
