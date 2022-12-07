@@ -12,8 +12,8 @@ public final class CPU extends Player {
     @Override
     public void selectButton(TerrainButton[][] terrain, int row, int col) {   
         if(!terrain[row][col].isRevealed()) {
-            row = rand.nextInt(0);
-            col = rand.nextInt(0);
+            row = rand.nextInt(Main.getRowMaximun());
+            col = rand.nextInt(Main.getColMaximun());
             keepScore(terrain, row, col);
             terrain[row][col].setRevealed(true, colorObject());
             if(terrain[row][col].isGold()) {

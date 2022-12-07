@@ -217,4 +217,13 @@ public final class Main extends JFrame {
         }
         return color;
     }
+
+    // getters (for class CPU)
+    public static int getRowMaximun() {
+        return ROW;
+    }
+
+    public static int getColMaximun() {
+        return COL;
+    }
 }
