@@ -29,7 +29,7 @@ public class Player {
         return this.color;
     }
 
-    public boolean turnOver() {
+    protected final boolean turnOver() {
         return this.turnOver;
     }
 
@@ -38,11 +38,11 @@ public class Player {
         this.color = color;
     }
 
-    public void startTurn() {
+    protected final void startTurn() {
         this.turnOver = false;
     }
 
-    public void endTurn() {
+    protected final void endTurn() {
         this.turnOver = true;
     }
 
