@@ -243,7 +243,9 @@ public final class Main extends JFrame {
         int c = 0;
         int maxPlayerIndex = (players.size() - 1);
         while(true) {
+            
             players.get(c).selectButton(terrain, ROW, COL);
+            
             if(c < maxPlayerIndex) {
                 c++;
             }
