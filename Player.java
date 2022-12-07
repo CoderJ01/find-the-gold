@@ -61,44 +61,56 @@ public class Player {
     }
 
     protected final Color[] colorObject() {
+        String[] labels = Main.getLabels();
         Color[] colors = new Color[2];
-        if(this.color.equals("blue")) {
+        
+        // blue
+        if(this.color.equals(labels[0])) {
             colors[0] = new Color(0, 0, 225);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color.equals("brown")) {
+        // brown
+        else if(this.color.equals(labels[1])) {
             colors[0] = new Color(100, 38, 14);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color.equals("cream")) {
+        // cream
+        else if(this.color.equals(labels[2])) {
             colors[0] = new Color(255, 250, 160);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color.equals("cyan")) {
+        // cyan
+        else if(this.color.equals(labels[3])) {
             colors[0] = new Color(0, 255, 255);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color.equals("gray")) {
+        // gray
+        else if(this.color.equals(labels[4])) {
             colors[0] = new Color(128, 128, 128);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color.equals("green")) {
+        // green
+        else if(this.color.equals(labels[5])) {
             colors[0] = new Color(0, 128, 0);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color.equals("magenta")) {
+        // magenta
+        else if(this.color.equals(labels[6])) {
             colors[0] = new Color(255, 0, 143);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color.equals("orange")) {
+        // orange
+        else if(this.color.equals(labels[7])) {
             colors[0] = new Color(255, 95, 31);
             colors[1] = new Color(0, 0, 0);
         }
-        else if(this.color.equals("purple")) {
+        // purple
+        else if(this.color.equals(labels[8])) {
             colors[0] = new Color(128, 0, 128);
             colors[1] = new Color(255, 255, 225);
         }
-        else if(this.color.equals("red")) {
+        // red
+        else if(this.color.equals(labels[9])) {
             colors[0] = new Color(255, 0, 0);
             colors[1] = new Color(0, 0, 0);
         }

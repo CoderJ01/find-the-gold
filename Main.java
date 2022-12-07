@@ -16,6 +16,7 @@ public final class Main extends JFrame {
     private static List<Player> players = new ArrayList<>();
     private static List<String> colors = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
+    private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "orange", "purple", "red"};
 
     public static void main(String[] args) {
         try {
@@ -39,16 +40,9 @@ public final class Main extends JFrame {
 
     // colors
     private static void colors() {
-        colors.add("blue");
-        colors.add("brown");
-        colors.add("cream");
-        colors.add("cyan");
-        colors.add("gray");
-        colors.add("green");
-        colors.add("magenta");
-        colors.add("orange");
-        colors.add("purple");
-        colors.add("red");
+        for(int i = 0; i < labels.length; i++) {
+            colors.add(labels[i]);
+        }
     }
 
     private static void addPlayers() {
@@ -232,13 +226,17 @@ public final class Main extends JFrame {
         return color;
     }
 
-    // getters (for class CPU)
+    // getters (for classes CPU and Player)
     public static int getRowMaximun() {
         return ROW;
     }
 
     public static int getColMaximun() {
         return COL;
+    }
+
+    public static String[] getLabels() {
+        return labels;
     }
 
     // test only CPU players
