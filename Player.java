@@ -70,6 +70,14 @@ public class Player {
             colors[0] = new Color(100, 38, 14);
             colors[1] = new Color(255, 255, 225);
         }
+        else if(this.color.equals("cream")) {
+            colors[0] = new Color(255, 250, 160);
+            colors[1] = new Color(0, 0, 0);
+        }
+        else if(this.color.equals("cyan")) {
+            colors[0] = new Color(0, 255, 255);
+            colors[1] = new Color(0, 0, 0);
+        }
         else if(this.color.equals("gray")) {
             colors[0] = new Color(128, 128, 128);
             colors[1] = new Color(255, 255, 225);
@@ -77,6 +85,10 @@ public class Player {
         else if(this.color.equals("green")) {
             colors[0] = new Color(0, 128, 0);
             colors[1] = new Color(255, 255, 225);
+        }
+        else if(this.color.equals("magenta")) {
+            colors[0] = new Color(255, 0, 143);
+            colors[1] = new Color(0, 0, 0);
         }
         else if(this.color.equals("orange")) {
             colors[0] = new Color(255, 95, 31);
@@ -88,18 +100,6 @@ public class Player {
         }
         else if(this.color.equals("red")) {
             colors[0] = new Color(255, 0, 0);
-            colors[1] = new Color(0, 0, 0);
-        }
-        else if(this.color.equals("cream")) {
-            colors[0] = new Color(255, 250, 160);
-            colors[1] = new Color(0, 0, 0);
-        }
-        else if(this.color.equals("magenta")) {
-            colors[0] = new Color(255, 0, 143);
-            colors[1] = new Color(0, 0, 0);
-        }
-        else if(this.color.equals("cyan")) {
-            colors[0] = new Color(0, 255, 255);
             colors[1] = new Color(0, 0, 0);
         }
         return colors;
