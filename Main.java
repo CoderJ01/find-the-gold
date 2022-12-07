@@ -68,7 +68,6 @@ public final class Main extends JFrame {
         for(int i = 1; i <= numberOfOpponents; i++) {
             players.add(new CPU(computerName + i));
         }
-
     }
 
     // initialize frame for game
