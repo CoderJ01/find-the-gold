@@ -66,7 +66,6 @@ public class Player {
                                     gameEnd(terrain, row, col);
                                 }
                                 System.out.println(turnOver());
-                                // break OUTER;
                             }
                         }
                     }); 
