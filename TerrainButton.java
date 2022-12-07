@@ -10,6 +10,7 @@ public final class TerrainButton extends JButton {
     private final int DIMENSION = 40;
     private int points;
     private boolean pointsSet; // keep track of whether or not points are set for button
+    private boolean colorSet; // keep track of whether or not the color has been set for the bottun
 
     // constructor
     public TerrainButton(int row, int col) {
@@ -45,6 +46,10 @@ public final class TerrainButton extends JButton {
         return this.pointsSet;
     }
 
+    public boolean isColorSet() {
+        return this.colorSet;
+    }
+
     // setters
     public void setGold(boolean isGold) {
         this.isGold = isGold;
@@ -52,6 +57,10 @@ public final class TerrainButton extends JButton {
 
     public void setPoints(boolean pointsSet) {
         this.pointsSet = true;
+    }
+
+    private void setColor() {
+        this.colorSet = true;
     }
 
     public void setRevealed(boolean revealed, Color[] colors) {
@@ -63,8 +72,11 @@ public final class TerrainButton extends JButton {
                 setBackground(new Color(255, 215, 0));
             }
             else {
-                setForeground(colors[1]); // set color of text
-                setBackground(colors[0]); // set color of button
+                if(!isColorSet()) {
+                    setForeground(colors[1]); // set color of text
+                    setBackground(colors[0]); // set color of button
+                    setColor(); // prevent non-CPU player from changing color of button selected by CPU player
+                }
             }
             setText("" + this.points);
         }
