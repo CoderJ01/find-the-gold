@@ -49,7 +49,6 @@ public class Player {
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         startTurn();
-        System.out.println(turnOver());
         for(int row = 0; row < rowMax; row++) {
             for(int col = 0; col < colMax; col++) {
                 if(!turnOver()) {
@@ -66,7 +65,6 @@ public class Player {
                                     gameEnd(terrain, row, col);
                                 }
                                 endTurn();
-                                System.out.println(turnOver());
                             }
                         }
                     }); 
