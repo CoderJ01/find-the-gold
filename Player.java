@@ -55,7 +55,6 @@ public class Player {
         }
     }
     
-
     protected final Color[] colorObject() {
         String[] labels = Main.getLabels();
         Color[] colors = new Color[2];
