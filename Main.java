@@ -67,9 +67,9 @@ public final class Main extends JFrame {
         }
 
         // have players select color
-        selectColor();
+        String color = selectColor();
 
-        players.get(0).setColor("blue");
+        players.get(0).setColor(color);
         players.get(1).setColor("green");
     }
 
@@ -225,7 +225,7 @@ public final class Main extends JFrame {
                 colors.remove(colors.get(i)); 
             }
         }
-        
+
         return color;
     }
 
