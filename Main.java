@@ -46,7 +46,7 @@ public final class Main extends JFrame {
     }
 
     private static void addPlayers() {
-        // // add all players
+        // add all players
         String name = enterName();
 
         players.add(new Player(name));
