@@ -8,7 +8,7 @@ Download the .jar file [here](https://github.com/CoderJ01/find-the-gold/blob/mai
 ## Built With
 * Java
 
-## Screenshot of Terminal
+## Screenshot of Window
 ![Alt text](./assets/images/window-image.jpg?raw=true "Find the Gold")
 
 ## Contribution
