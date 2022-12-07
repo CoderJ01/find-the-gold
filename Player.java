@@ -61,18 +61,18 @@ public class Player {
         
         // blue
         if(this.color.equals(labels[0])) {
-            colors[0] = new Color(0, 0, 225);
-            colors[1] = new Color(255, 255, 225);
+            colors[0] = new Color(0, 0, 225); // button color (e.g. blue)
+            colors[1] = new Color(255, 255, 225); // text color
         }
         // brown
         else if(this.color.equals(labels[1])) {
             colors[0] = new Color(100, 38, 14);
-            colors[1] = new Color(255, 255, 225);
+            colors[1] = new Color(255, 255, 225); // white
         }
         // cream
         else if(this.color.equals(labels[2])) {
             colors[0] = new Color(255, 250, 160);
-            colors[1] = new Color(0, 0, 0);
+            colors[1] = new Color(0, 0, 0); // black
         }
         // cyan
         else if(this.color.equals(labels[3])) {
@@ -112,7 +112,7 @@ public class Player {
         return colors;
     }
 
-    // allow players score to be kept
+    // allow player's score to be kept
     protected final void keepScore(TerrainButton[][] terrain, int row, int col) {
         if(!terrain[row][col].isRevealed()) {
             this.points += terrain[row][col].getPoints();

@@ -10,7 +10,7 @@ public final class TerrainButton extends JButton {
     private final int DIMENSION = 40;
     private int points;
     private boolean pointsSet; // keep track of whether or not points are set for button
-    private boolean colorSet; // keep track of whether or not the color has been set for the bottun
+    private boolean colorSet; // keep track of whether or not the color has been set for the button
 
     // constructor
     public TerrainButton(int row, int col) {

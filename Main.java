@@ -107,7 +107,7 @@ public final class Main extends JFrame {
        terrain[row][col].setGold(true); 
     }
 
-    // set the amount of poinst for each button
+    // set the amount of points for each button
     private static void setButtonPoints() {
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
