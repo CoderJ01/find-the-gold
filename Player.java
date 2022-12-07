@@ -1,6 +1,10 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
 import java.awt.Color;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Player {
     // fields
@@ -45,16 +49,12 @@ public class Player {
     public void selectButton(TerrainButton[][] terrain, int row, int col) {   
         terrain[row][col].addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // if(getTurn() == 0) {
                     TerrainButton button = (TerrainButton) e.getSource();
                     int row = button.getRow();
                     int col = button.getCol();
                     keepScore(terrain, row, col);
                     terrain[row][col].setRevealed(true, colorObject());
                 }
-                // setTurn();
-                // System.out.println();
-            // }
         }); 
     }
 
@@ -104,5 +104,14 @@ public class Player {
             this.points = 0;
         }
         System.out.println(this.points);
+        gameEnd(terrain, row, col);
+    }
+
+    // end the game when the player finds the gold
+    private void gameEnd(TerrainButton[][] terrain, int row, int col) {
+        if(terrain[row][col].isGold()) {
+            String message = this.PLAYER_NAME + " has found the gold. The game is over";
+            JOptionPane.showMessageDialog(null, message);
+        }
     }
 }
