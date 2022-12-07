@@ -91,7 +91,7 @@ public class Player {
             colors[1] = new Color(0, 0, 0);
         }
         else if(this.color.equals("yellow")) {
-            colors[0] = new Color(255, 255, 0);
+            colors[0] = new Color(255, 255, 143);
             colors[1] = new Color(0, 0, 0);
         }
         return colors;
