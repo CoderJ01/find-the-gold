@@ -2,14 +2,15 @@ import java.awt.GridLayout;
 // import java.awt.event.ActionEvent;
 // import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Random;
+// import java.awt.Color;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-// import java.awt.Color;
-import java.util.Scanner;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
@@ -51,6 +52,7 @@ public final class Main extends JFrame {
     }
 
     private static void addPlayers() {
+        // add players
         String name = enterName();
 
         players.add(new Player(name));
@@ -58,6 +60,15 @@ public final class Main extends JFrame {
 
         players.get(0).setColor("blue");
         players.get(1).setColor("green");
+
+        int numberOfOpponents = opponents(); // retrieve number of opponents
+        
+        String computerName = "CPU_";
+        
+        for(int i = 1; i <= numberOfOpponents; i++) {
+            players.add(new CPU(computerName + i));
+        }
+
     }
 
     // initialize frame for game
@@ -156,5 +167,33 @@ public final class Main extends JFrame {
         System.out.print("Enter your name: ");
         String name = input.next();
         return name;
+    }
+
+    // allow the player to enter the number of opponents to play against
+    private static int opponents() {
+        int numberOfOpponents = 0;
+        boolean error = false;
+        int min = 0, max = 7;
+
+        while(true) {
+            // check for appropiate data type
+            do {
+                error = false;
+                try {
+                    System.out.print("\nHow many opponents would you like to play against? Enter a number from " + min + " to " + max + ": ");
+                    numberOfOpponents = input.nextInt();
+                }
+                catch(InputMismatchException e) {
+                    error = true;
+                    input.nextLine();
+                }
+            } while(error);
+
+            // check if integer is within the specified range
+            if(numberOfOpponents >= min && numberOfOpponents <= max) {
+                break;
+            }
+        }
+        return numberOfOpponents;
     }
 }
