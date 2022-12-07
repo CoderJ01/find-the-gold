@@ -29,32 +29,50 @@ public class Player {
         return this.color;
     }
 
+    public int turnOrNot() {
+        return this.turn;
+    }
+
     // setter
     public final void setColor(String color) {
         this.color = color;
     }
 
+    public void startTurn() {
+        this.turn = 0;
+    }
+
+    public void endTurn() {
+        this.turn = 1;
+    }
+
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
+        startTurn();
+        System.out.println(turnOrNot());
         OUTER: for(int row = 0; row < rowMax; row++) {
             for(int col = 0; col < colMax; col++) {
-                terrain[row][col].addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        // allow action performance only if player has more than 0 points
-                        int points = getPoints();
-                        if(points > 0) {
-                            TerrainButton button = (TerrainButton) e.getSource();
-                            int row = button.getRow();
-                            int col = button.getCol();
-                            keepScore(terrain, row, col);
-                            terrain[row][col].setRevealed(true, colorObject());
-                            if(terrain[row][col].isGold()) {
-                                gameEnd(terrain, row, col);
+                if(turnOrNot() == 0) {
+                    terrain[row][col].addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                            // allow action performance only if player has more than 0 points
+                            int points = getPoints();
+                            System.out.println(turn);
+                            if(points > 0) {
+                                TerrainButton button = (TerrainButton) e.getSource();
+                                int row = button.getRow();
+                                int col = button.getCol();
+                                keepScore(terrain, row, col);
+                                terrain[row][col].setRevealed(true, colorObject());
+                                if(terrain[row][col].isGold()) {
+                                    gameEnd(terrain, row, col);
+                                }
+                                System.out.println(turnOrNot());
+                                // break OUTER;
                             }
-                            // break OUTER;
                         }
-                    }
-                }); 
+                    }); 
+                }
             }
         }
     }
