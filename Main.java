@@ -30,10 +30,10 @@ public final class Main extends JFrame {
     // run game
     public Main() {
         colors();
+        addPlayers();
         initialize();
         setGoldButton();
         setButtonPoints();
-        addPlayers();
         gamePlay();
     }
 
@@ -241,7 +241,7 @@ public final class Main extends JFrame {
 
     // test only CPU players
     private static void gamePlay() {
-        int c = 0;
+        int c = 1;
         int maxPlayerIndex = (players.size() - 1);
         while(true) {
             players.get(c).selectButton(terrain, ROW, COL);
