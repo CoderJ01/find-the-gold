@@ -7,7 +7,7 @@ The objective of this game is to be the first player to find the gold button. Al
 * Java
 
 ## Screenshot of Terminal
-![Alt text](./assets/images/window-image.JPG?raw=true "Find the Gold")
+![Alt text](./assets/images/window-image.jpg?raw=true "Find the Gold")
 
 ## Contribution
 Made by CoderJ01
