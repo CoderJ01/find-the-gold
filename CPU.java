@@ -7,4 +7,18 @@ public final class CPU extends Player {
     public CPU(String name) {
         super(name);
     }
+
+    // have CPU select button
+    @Override
+    public void selectButton(TerrainButton[][] terrain, int row, int col) {   
+        if(!terrain[row][col].isRevealed()) {
+            row = rand.nextInt(0);
+            col = rand.nextInt(0);
+            keepScore(terrain, row, col);
+            terrain[row][col].setRevealed(true, colorObject());
+            if(terrain[row][col].isGold()) {
+                gameEnd(terrain, row, col);
+            }  
+        }     
+    }
 }

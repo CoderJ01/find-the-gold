@@ -60,7 +60,7 @@ public class Player {
         }); 
     }
 
-    private Color[] colorObject() {
+    protected Color[] colorObject() {
         Color[] colors = new Color[2];
         if(this.color == "blue") {
             colors[0] = new Color(0, 0, 225);
@@ -98,7 +98,7 @@ public class Player {
     }
 
     // allow players score to be kept
-    private void keepScore(TerrainButton[][] terrain, int row, int col) {
+    protected void keepScore(TerrainButton[][] terrain, int row, int col) {
         if(!terrain[row][col].isRevealed()) {
             this.points += terrain[row][col].getPoints();
         }
@@ -109,7 +109,7 @@ public class Player {
     }
 
     // end the game when the player finds the gold
-    private void gameEnd(TerrainButton[][] terrain, int row, int col) {
+    protected void gameEnd(TerrainButton[][] terrain, int row, int col) {
         if(terrain[row][col].isGold()) {
             String message = this.PLAYER_NAME + " has found the gold. The game is over";
             JOptionPane.showMessageDialog(null, message);
