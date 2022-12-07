@@ -49,6 +49,7 @@ public class Player {
                     TerrainButton button = (TerrainButton) e.getSource();
                     int row = button.getRow();
                     int col = button.getCol();
+                    keepScore(terrain, row, col);
                     terrain[row][col].setRevealed(true, colorObject());
                 }
                 // setTurn();
@@ -92,5 +93,16 @@ public class Player {
             colors[1] = new Color(0, 0, 0);
         }
         return colors;
+    }
+
+    // allow players score to be kept
+    private void keepScore(TerrainButton[][] terrain, int row, int col) {
+        if(!terrain[row][col].isRevealed()) {
+            this.points += terrain[row][col].getPoints();
+        }
+        if(this.points <= 0) {
+            this.points = 0;
+        }
+        System.out.println(this.points);
     }
 }
