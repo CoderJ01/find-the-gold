@@ -59,10 +59,6 @@ public final class TerrainButton extends JButton {
         this.pointsSet = true;
     }
 
-    private void setColor() {
-        this.colorSet = true;
-    }
-
     public void setRevealed(boolean revealed, Color[] colors) {
         this.revealed = true;
 
@@ -75,7 +71,7 @@ public final class TerrainButton extends JButton {
                 if(!isColorSet()) {
                     setForeground(colors[1]); // set color of text
                     setBackground(colors[0]); // set color of button
-                    setColor(); // prevent non-CPU player from changing color of button selected by CPU player
+                    this.colorSet = true; // prevent non-CPU player from changing color of button selected by CPU player
                 }
             }
             setText("" + this.points);
