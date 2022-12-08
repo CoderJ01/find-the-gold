@@ -17,10 +17,19 @@ public final class CPU extends Player {
         startTurn();
         OUTER: while(getPoints() > 0) {
             for(int row = 0; row < rowMax; row++) {
-                for(int col = 0; col < colMax; col++) {     
-                    if(!terrain[row][col].isRevealed() && !turnOver()) {
+                for(int col = 0; col < colMax; col++) {   
+                    // button selection validation
+                    while(true) {
                         row = rand.nextInt(Main.getRowMaximun());
                         col = rand.nextInt(Main.getColMaximun());
+                        
+                        // CPU will quickl keep searching for buttons until it finds one that has yet to be revealed
+                        if(!terrain[row][col].isRevealed()) {
+                            break;
+                        }
+                    }  
+                
+                    if(!turnOver()) {
                         keepScore(terrain, row, col);
                         terrain[row][col].setRevealed(true, colorObject());
                         endTurn();
