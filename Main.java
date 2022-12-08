@@ -272,6 +272,11 @@ public final class Main extends JFrame {
                 maxPlayerIndex--;
                 c--;
             } 
+
+            // prevent further reponses from buttons if gold button is found
+            if(goldFound()) {
+                break;
+            }
             
             // increment
             if(c < maxPlayerIndex) {
@@ -314,5 +319,17 @@ public final class Main extends JFrame {
         else {
             return false;
         }
+    }
+
+    // check if gold button is found
+    private static boolean goldFound() {
+        for(int row = 0; row < ROW; row++) {
+            for(int col = 0; col < COL; col++) {
+                if(terrain[row][col].isGold() && terrain[row][col].isRevealed()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
