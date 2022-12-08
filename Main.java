@@ -274,7 +274,7 @@ public final class Main extends JFrame {
             } 
 
             // prevent further reponses from buttons if gold button is found
-            if(goldFound()) {
+            if(goldFound() || players.size() == 0) {
                 break;
             }
             
@@ -285,6 +285,11 @@ public final class Main extends JFrame {
             else if(c == maxPlayerIndex) {
                 c = 0;
             }
+        }
+
+        // display if all players lose all points
+        if(players.size() == 0) {
+            System.out.println("All players lose the game!");
         }
     }
 
