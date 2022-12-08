@@ -146,7 +146,7 @@ public final class Main extends JFrame {
         points[11] = -20;
         points[12] = -10;
 
-        // sets points for each button
+        // set points for each button
         int p = 0;
         int max = 5;
         while(p < points.length) {
