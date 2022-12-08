@@ -76,7 +76,7 @@ public final class Main extends JFrame {
         for(int i = 1; i < players.size(); i++) {
             int pick = rand.nextInt(colors.size());
             players.get(i).setColor(colors.get(pick)); // CPU picks a random color
-            colors.remove(colors.get(pick)); // pick is remove to prevent any duplicates
+            colors.remove(colors.get(pick)); // pick is removed to prevent any duplicates
         }
 
         String playerColors = "";
