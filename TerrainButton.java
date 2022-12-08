@@ -79,6 +79,7 @@ public final class TerrainButton extends JButton {
                 }
             }
             setText("" + this.points);
+		    setFocusPainted(false); // disable focus mark display on last clicked button
         }
     }
 
