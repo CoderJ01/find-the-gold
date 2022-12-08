@@ -257,11 +257,14 @@ public final class Main extends JFrame {
         
         while(true) {
             
-            players.get(c).selectButton(terrain, ROW, COL);
-
-            if(players.get(c).getPoints() == 0) {
+            if(players.get(c).getPoints() > 0) {
+                players.get(c).selectButton(terrain, ROW, COL);
+            } 
+            else {
                 System.out.println(players.get(c).getPlayerName() + " is OUT!");
-            }
+                players.remove(players.get(c));
+                maxPlayerIndex--;
+            } 
             
             if(c < maxPlayerIndex) {
                 c++;
