@@ -265,7 +265,9 @@ public final class Main extends JFrame {
             else {
                 System.out.println(players.get(c).getPlayerName() + " is OUT!"); // display message that player is out
                 players.remove(players.get(c)); // remove player from the game
-                maxPlayerIndex--; // change index for proper accommodation (i.e. prevent IndexOutOfBoundsException)
+                // change indexes for proper accommodation (i.e. prevent IndexOutOfBoundsException)
+                maxPlayerIndex--;
+                c--;
             } 
             
             if(c < maxPlayerIndex) {

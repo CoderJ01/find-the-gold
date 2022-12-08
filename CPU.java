@@ -39,7 +39,7 @@ public final class CPU extends Player {
     private void delay() {
         try {
             // delay each output by less than a second
-            TimeUnit.MILLISECONDS.sleep(80);
+            TimeUnit.MILLISECONDS.sleep(750);
         }
         catch(InterruptedException e) {
             System.out.println("Error");
