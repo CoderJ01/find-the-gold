@@ -76,54 +76,55 @@ public class Player {
     protected final Color[] colorObject() {
         String[] labels = Main.getLabels();
         Color[] colors = new Color[2];
+        int i = 0; // increment to optimize addition of new colors in alphabetized list
         
         // blue
-        if(this.color.equals(labels[0])) {
+        if(this.color.equals(labels[i])) {
             colors[0] = new Color(0, 0, 225); // button color (e.g. blue)
             colors[1] = new Color(255, 255, 225); // text color (either black or white)
         }
         // brown
-        else if(this.color.equals(labels[1])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(100, 38, 14);
             colors[1] = new Color(255, 255, 225); // white
         }
         // cream
-        else if(this.color.equals(labels[2])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(255, 250, 160);
             colors[1] = new Color(0, 0, 0); // black
         }
         // cyan
-        else if(this.color.equals(labels[3])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(0, 255, 255);
             colors[1] = new Color(0, 0, 0);
         }
         // gray
-        else if(this.color.equals(labels[4])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(128, 128, 128);
             colors[1] = new Color(255, 255, 225);
         }
         // green
-        else if(this.color.equals(labels[5])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(0, 128, 0);
             colors[1] = new Color(255, 255, 225);
         }
         // magenta
-        else if(this.color.equals(labels[6])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(255, 0, 143);
             colors[1] = new Color(0, 0, 0);
         }
         // orange
-        else if(this.color.equals(labels[7])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(255, 95, 31);
             colors[1] = new Color(0, 0, 0);
         }
         // purple
-        else if(this.color.equals(labels[8])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(128, 0, 128);
             colors[1] = new Color(255, 255, 225);
         }
         // red
-        else if(this.color.equals(labels[9])) {
+        else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(255, 0, 0);
             colors[1] = new Color(0, 0, 0);
         }
