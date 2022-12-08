@@ -266,7 +266,6 @@ public final class Main extends JFrame {
             }
             // if player has 0 points 
             else {
-                System.out.println(players.get(c).getPlayerName() + " is OUT!"); // display message that player is out
                 players.remove(players.get(c)); // remove player from the game
                 
                 // change indexes for proper accommodation (i.e. prevent IndexOutOfBoundsException)
