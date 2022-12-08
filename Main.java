@@ -12,7 +12,7 @@ import javax.swing.UIManager;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
-    private static final int COL = 30;
+    private static final int COL = 20;
     private static TerrainButton[][] terrain = new TerrainButton[ROW][COL];
     private static Random rand = new Random();
     private static List<Player> players = new ArrayList<>();
@@ -146,7 +146,7 @@ public final class Main extends JFrame {
 
         // sets points for each button
         int p = 0;
-        int max = 8;
+        int max = 5;
         while(p < points.length) {
             for(int i = 0; i < max; i++) {
                 int randRow = rand.nextInt(ROW);
