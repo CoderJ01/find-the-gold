@@ -82,10 +82,12 @@ public final class Main extends JFrame {
         String playerColors = "";
 
         for(int i = 0; i < players.size(); i++) {
-            playerColors += "\n" + players.get(i).getPlayerName() + "'s color is " + players.get(i).getColor();
+            playerColors += players.get(i).getPlayerName() + "'s color is " + players.get(i).getColor() + "\n";
         }
 
         JOptionPane.showMessageDialog(null, playerColors); // display each player's color
+        System.out.println();
+        System.out.println(playerColors);
     }
 
     // initialize frame for game
