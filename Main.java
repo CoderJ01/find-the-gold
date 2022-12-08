@@ -289,7 +289,7 @@ public final class Main extends JFrame {
 
         // display if all players lose all points
         if(players.size() == 0) {
-            System.out.println("All players lose the game!");
+            JOptionPane.showMessageDialog(null, "All players lose the game!");
         }
     }
 
