@@ -148,7 +148,7 @@ public final class Main extends JFrame {
 
         // set points for each button
         int p = 0;
-        int max = 5;
+        int max = 6;
         while(p < points.length) {
             for(int i = 0; i < max; i++) {
                 int randRow = rand.nextInt(ROW);
