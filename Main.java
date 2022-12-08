@@ -252,7 +252,7 @@ public final class Main extends JFrame {
         return labels;
     }
 
-    // this allows the game to be played
+    // this is the actual game play
     private static void gamePlay() {
         int c = 0;
         int maxPlayerIndex = (players.size() - 1);
