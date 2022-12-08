@@ -257,6 +257,7 @@ public final class Main extends JFrame {
         int c = 0;
         int maxPlayerIndex = (players.size() - 1);
         
+        // loop through players for turn switching
         while(true) {
             
             // allow players with over zero points to select button
@@ -272,6 +273,7 @@ public final class Main extends JFrame {
                 c--;
             } 
             
+            // increment
             if(c < maxPlayerIndex) {
                 c++;
             }
