@@ -34,7 +34,7 @@ public final class Main extends JFrame {
     public Main() {
         colors();
         addPlayers();
-        initialize();
+        initializeGrid();
         setGoldButton();
         setButtonPoints();
         gamePlay();
@@ -91,7 +91,7 @@ public final class Main extends JFrame {
     }
 
     // initialize frame for game
-    private static void initialize() {
+    private static void initializeGrid() {
         JFrame frame = new JFrame();
         frame.setTitle("Find the Gold");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // exit the application
