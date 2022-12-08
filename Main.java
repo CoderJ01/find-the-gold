@@ -82,7 +82,7 @@ public final class Main extends JFrame {
         String playerColors = "";
 
         for(int i = 0; i < players.size(); i++) {
-            playerColors += players.get(i).getPlayerName() + "'s color is " + players.get(i).getColor() + "\n";
+            playerColors += players.get(i).getPlayerName() + " has selected " + players.get(i).getColor() + "\n";
         }
 
         JOptionPane.showMessageDialog(null, playerColors); // display each player's color
