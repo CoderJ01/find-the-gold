@@ -257,13 +257,15 @@ public final class Main extends JFrame {
         
         while(true) {
             
+            // allow players with over zero points to select button
             if(players.get(c).getPoints() > 0) {
                 players.get(c).selectButton(terrain, ROW, COL);
-            } 
+            }
+            // if player has 0 points 
             else {
-                System.out.println(players.get(c).getPlayerName() + " is OUT!");
-                players.remove(players.get(c));
-                maxPlayerIndex--;
+                System.out.println(players.get(c).getPlayerName() + " is OUT!"); // display message that player is out
+                players.remove(players.get(c)); // remove player from the game
+                maxPlayerIndex--; // change index for proper accommodation (i.e. prevent OutOfBounds error)
             } 
             
             if(c < maxPlayerIndex) {
