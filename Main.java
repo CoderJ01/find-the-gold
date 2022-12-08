@@ -85,7 +85,7 @@ public final class Main extends JFrame {
             playerColors += players.get(i).getPlayerName() + " has selected " + players.get(i).getColor() + "\n";
         }
 
-        JOptionPane.showMessageDialog(null, playerColors); // display each player's color
+        JOptionPane.showMessageDialog(null, "Press OK to confirm that you are ready to play the game."); // display each player's color
         System.out.println();
         System.out.println(playerColors);
     }
