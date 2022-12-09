@@ -312,7 +312,10 @@ public final class Main extends JFrame {
                                     TerrainButton button = (TerrainButton) e.getSource();
                                     int row = button.getRow();
                                     int col = button.getCol();
-                                    players.get(0).keepScore(terrain, row, col);
+                                    // display score only if button has not been selected
+                                    if(!terrain[row][col].isRevealed()) {
+                                        players.get(0).keepScore(terrain, row, col);
+                                    }
                                     terrain[row][col].setRevealed(true, players.get(0).colorObject());
                                     if(terrain[row][col].isGold()) {
                                         players.get(0).gameEnd(terrain, row, col);
