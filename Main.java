@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
@@ -18,6 +20,7 @@ public final class Main extends JFrame {
     private static List<String> colors = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
     private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "orange", "purple", "red"};
+    private static final String allPlayersLose = "All players lose the game!";
 
     public static void main(String[] args) {
         try {
@@ -251,6 +254,10 @@ public final class Main extends JFrame {
         return labels;
     }
 
+    public static String getEndMessage() {
+        return allPlayersLose;
+    }
+
     // this is the actual game play
     private static void gamePlay() {
         int c = 0;
@@ -276,6 +283,11 @@ public final class Main extends JFrame {
             if(goldFound() || players.size() == 0) {
                 break;
             }
+
+            // gameplay for non-CPU player will be handled outside while loop to prevent infinite display of points
+            if(players.size() == 1 && players.contains(players.get(0))) {
+                break;
+            }
             
             // increment
             if(c < maxPlayerIndex) {
@@ -283,6 +295,28 @@ public final class Main extends JFrame {
             }
             else if(c == maxPlayerIndex) {
                 c = 0;
+            }
+        }
+
+        players.get(0).setLastPlayer(true);
+        for(int row = 0; row < ROW; row++) {
+            for(int col = 0; col < COL; col++) {
+                terrain[row][col].addActionListener(new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                            if(players.get(0).getPoints() > 0) {
+                                TerrainButton button = (TerrainButton) e.getSource();
+                                int row = button.getRow();
+                                int col = button.getCol();
+                                players.get(0).keepScore(terrain, row, col);
+                                terrain[row][col].setRevealed(true, players.get(0).colorObject());
+                                if(terrain[row][col].isGold()) {
+                                    players.get(0).gameEnd(terrain, row, col);
+                                }
+                                players.get(0).endTurn();
+                            }
+                        }
+                    }
+                ); 
             }
         }
 

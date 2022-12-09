@@ -9,6 +9,7 @@ public class Player {
     private int points;
     private String color;
     private boolean turnOver;
+    private boolean lastPlayer;
 
     // constructor
     public Player(String name) {
@@ -46,6 +47,10 @@ public class Player {
         this.turnOver = true;
     }
 
+    public void setLastPlayer(boolean isLastPlayer) {
+        this.lastPlayer = isLastPlayer;
+    }
+
     // allow player to select button
     public void selectButton(TerrainButton[][] terrain, int rowMax, int colMax) {   
         startTurn();
@@ -73,7 +78,7 @@ public class Player {
         }
     }
     
-    protected final Color[] colorObject() {
+    public final Color[] colorObject() {
         String[] labels = Main.getLabels();
         Color[] colors = new Color[2];
         int i = 0; // increment to optimize addition of new colors in alphabetized list
@@ -142,6 +147,11 @@ public class Player {
         else {
             this.points = 0;
             System.out.println(PLAYER_NAME + " is OUT!"); // display message that player is out
+
+            //display message only if non-CPU player is the last player in the game
+            if(this.lastPlayer == true) {
+                JOptionPane.showMessageDialog(null, Main.getEndMessage());
+            }
         }
     }
 
