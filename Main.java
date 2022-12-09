@@ -20,7 +20,7 @@ public final class Main extends JFrame {
     private static List<String> colors = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
     private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "orange", "purple", "red"};
-    private static final String allPlayersLose = "All players lose the game!";
+    private static final String ALL_PLAYERS_LOSE = "All players lose the game!";
     private static int difficulty;
 
     public static void main(String[] args) {
@@ -258,7 +258,7 @@ public final class Main extends JFrame {
     }
 
     public static String getEndMessage() {
-        return allPlayersLose;
+        return ALL_PLAYERS_LOSE;
     }
 
     // this is the actual game play
@@ -334,7 +334,7 @@ public final class Main extends JFrame {
         
         // display if all players lose all points
         if(players.size() == 0) {
-            JOptionPane.showMessageDialog(null, allPlayersLose);
+            JOptionPane.showMessageDialog(null, ALL_PLAYERS_LOSE);
             System.exit(0);
         }
     }
