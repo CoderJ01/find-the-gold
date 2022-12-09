@@ -62,7 +62,7 @@ public final class TerrainButton extends JButton {
     public void setRevealed(boolean revealed, Color[] colors) {
         this.revealed = true;
 
-        if(this.revealed == true) {
+        if(this.revealed) {
             setOpaque(true);
             if(isGold()) {
                 setBackground(new Color(255, 215, 0));

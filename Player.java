@@ -154,9 +154,9 @@ public class Player {
 
             /* display message only if non-CPU player is the last player in the game
                this covers for the identical JOptionPane in the gamePlay() method of Main.java, since it will
-               not be reached if the non-CPU player is the last player in Sthe game
+               not be reached if the non-CPU player is the last player in the game
             */
-            if(this.lastPlayer == true) {
+            if(this.lastPlayer) {
                 JOptionPane.showMessageDialog(null, Main.getEndMessage());
                 System.exit(0);
             }

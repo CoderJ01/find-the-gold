@@ -81,7 +81,7 @@ public final class Main extends JFrame {
             colors.remove(colors.get(pick)); // pick is removed to prevent any duplicates
         }
 
-        difficulty = selectdifficulty();
+        difficulty = selectDifficulty();
 
         String playerColors = "";
 
@@ -260,7 +260,7 @@ public final class Main extends JFrame {
         return ALL_PLAYERS_LOSE;
     }
 
-    // this is the actual game play
+    // this is the actual gameplay
     private static void gamePlay() {
         int c = 0;
         int maxPlayerIndex = (players.size() - 1);
@@ -310,23 +310,22 @@ public final class Main extends JFrame {
                 for(int col = 0; col < COL; col++) {
                     terrain[row][col].addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                                if(players.get(0).getPoints() > 0) {
-                                    TerrainButton button = (TerrainButton) e.getSource();
-                                    int row = button.getRow();
-                                    int col = button.getCol();
-                                    // display score only if button has not been selected
-                                    if(!terrain[row][col].isRevealed()) {
-                                        players.get(0).keepScore(terrain, row, col);
-                                    }
-                                    terrain[row][col].setRevealed(true, players.get(0).colorObject());
-                                    if(terrain[row][col].isGold()) {
-                                        players.get(0).gameEnd(terrain, row, col);
-                                    }
-                                    players.get(0).endTurn();
+                            if(players.get(0).getPoints() > 0) {
+                                TerrainButton button = (TerrainButton) e.getSource();
+                                int row = button.getRow();
+                                int col = button.getCol();
+                                // display score only if button has not been selected
+                                if(!terrain[row][col].isRevealed()) {
+                                    players.get(0).keepScore(terrain, row, col);
                                 }
+                                terrain[row][col].setRevealed(true, players.get(0).colorObject());
+                                if(terrain[row][col].isGold()) {
+                                    players.get(0).gameEnd(terrain, row, col);
+                                }
+                                players.get(0).endTurn();
                             }
                         }
-                    ); 
+                    }); 
                 }
             }
         }
@@ -384,11 +383,11 @@ public final class Main extends JFrame {
     }
 
     // prompt player to choose the difficulty of the grid
-    private static int selectdifficulty() {
+    private static int selectDifficulty() {
         String difficulty = "";
         int max = 0;
 
-        OUTER: while(true) {
+        while(true) {
             System.out.println("\nSelect s grid difficulty");
             System.out.println("1 - very easy");
             System.out.println("2 - easy");
@@ -401,7 +400,7 @@ public final class Main extends JFrame {
             if(difficulty.equals("1") || difficulty.equals("2") || difficulty.equals("3") || 
                difficulty.equals("4") || difficulty.equals("5")) 
             {
-                break OUTER;
+                break;
             }
         } 
         
