@@ -19,13 +19,11 @@ public final class CPU extends Player {
             for(int row = 0; row < rowMax; row++) {
                 for(int col = 0; col < colMax; col++) {   
                     if(!turnOver()) {
-                        // button selection validation
+                        // CPU will keep searching for buttons until it finds one that has yet to be revealed
                         while(true) {
-                            // CPU will keep searching for buttons 
                             row = rand.nextInt(Main.getRowMaximun());
                             col = rand.nextInt(Main.getColMaximun());
-                            
-                            // ...until it finds one that has yet to be revealed
+                    
                             if(!terrain[row][col].isRevealed()) {
                                 break;
                             }
