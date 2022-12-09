@@ -298,6 +298,10 @@ public final class Main extends JFrame {
             }
         }
 
+        /* If the game were to continue inside the while loop, then the points display for the non-CPU player would loop infinitely.
+           Using fields and local variables in class Player to circumvent the issue is not feasable due to the particular manner this
+           codebase is set up. The game will continue as it always has.
+        */ 
         players.get(0).setLastPlayer(true);
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {

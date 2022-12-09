@@ -34,7 +34,7 @@ public class Player {
         return this.turnOver;
     }
 
-    // setter
+    // setters
     public final void setColor(String color) {
         this.color = color;
     }
@@ -148,7 +148,10 @@ public class Player {
             this.points = 0;
             System.out.println(PLAYER_NAME + " is OUT!"); // display message that player is out
 
-            //display message only if non-CPU player is the last player in the game
+            /* display message only if non-CPU player is the last player in the game
+               this covers for the identical JOptionPane (line 329) in Main.java, since it will
+               not be reached if the non-CPU player is the last player in Sthe game
+            */
             if(this.lastPlayer == true) {
                 JOptionPane.showMessageDialog(null, Main.getEndMessage());
             }
