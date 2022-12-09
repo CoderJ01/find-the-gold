@@ -6,7 +6,7 @@ import java.awt.Color;
 public class Player {
     // fields
     private final String PLAYER_NAME;
-    private int points;
+    public int points;
     private String color;
     private boolean turnOver;
     private boolean lastPlayer;
@@ -34,6 +34,10 @@ public class Player {
         return this.turnOver;
     }
 
+    protected final boolean isLastPlayer() {
+        return this.lastPlayer;
+    }
+
     // setters
     public final void setColor(String color) {
         this.color = color;
@@ -47,7 +51,7 @@ public class Player {
         this.turnOver = true;
     }
 
-    public void setLastPlayer(boolean isLastPlayer) {
+    public final void setLastPlayer(boolean isLastPlayer) {
         this.lastPlayer = isLastPlayer;
     }
 

@@ -22,6 +22,7 @@ public final class Main extends JFrame {
     private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "orange", "purple", "red"};
     private static final String ALL_PLAYERS_LOSE = "All players lose the game!";
     private static int difficulty;
+    private static String computerName = "CPU_";
 
     public static void main(String[] args) {
         try {
@@ -63,8 +64,6 @@ public final class Main extends JFrame {
         players.add(new Player(name));
 
         int numberOfOpponents = opponents(); // retrieve number of opponents
-        
-        String computerName = "CPU_";
         
         for(int i = 1; i <= numberOfOpponents; i++) {
             players.add(new CPU(computerName + i));
@@ -265,6 +264,7 @@ public final class Main extends JFrame {
     private static void gamePlay() {
         int c = 0;
         int maxPlayerIndex = (players.size() - 1);
+        players.get(0).points = 5;
         
         // loop through players for turn switching
         while(true) {
@@ -288,10 +288,10 @@ public final class Main extends JFrame {
             }
 
             // gameplay for non-CPU player will be handled outside while loop to prevent infinite display of points
-            if(players.size() == 1 && players.contains(players.get(0))) {
+            if(players.size() == 1 && !players.get(0).getPlayerName().contains(computerName)) {
                 break;
             }
-            
+
             // increment
             if(c < maxPlayerIndex) {
                 c++;
@@ -305,7 +305,7 @@ public final class Main extends JFrame {
            Using fields and local variables in class Player to circumvent the issue is not feasable due to the particular manner this
            codebase is set up. The game will continue as it always has.
         */ 
-        if(players.size() == 1 && players.contains(players.get(0))) {
+        if(players.size() == 1 && !players.get(0).getPlayerName().contains(computerName)) {
             players.get(0).setLastPlayer(true);
             for(int row = 0; row < ROW; row++) {
                 for(int col = 0; col < COL; col++) {
