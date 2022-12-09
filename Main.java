@@ -218,7 +218,7 @@ public final class Main extends JFrame {
         String color = "";
 
         OUTER: while(true) {
-            System.out.println("\nSelect a color: ");
+            System.out.println("\nSelect a color");
             // display colors
             for(int i = 0; i < colors.size(); i++) {
                 System.out.println("- " + colors.get(i));
@@ -388,7 +388,7 @@ public final class Main extends JFrame {
         int max = 0;
 
         while(true) {
-            System.out.println("\nSelect a grid difficulty:");
+            System.out.println("\nSelect a grid difficulty");
             System.out.println("1 - very easy");
             System.out.println("2 - easy");
             System.out.println("3 - medium");
