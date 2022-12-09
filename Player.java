@@ -149,7 +149,7 @@ public class Player {
             System.out.println(PLAYER_NAME + " is OUT!"); // display message that player is out
 
             /* display message only if non-CPU player is the last player in the game
-               this covers for the identical JOptionPane (line 331) in Main.java, since it will
+               this covers for the identical JOptionPane in the gamePlay() method of Main.java, since it will
                not be reached if the non-CPU player is the last player in Sthe game
             */
             if(this.lastPlayer == true) {
