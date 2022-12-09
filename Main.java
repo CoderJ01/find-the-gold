@@ -21,6 +21,7 @@ public final class Main extends JFrame {
     private static Scanner input = new Scanner(System.in);
     private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "orange", "purple", "red"};
     private static final String allPlayersLose = "All players lose the game!";
+    private static int difficulty;
 
     public static void main(String[] args) {
         try {
@@ -80,6 +81,8 @@ public final class Main extends JFrame {
             players.get(i).setColor(colors.get(pick)); // CPU picks a random color
             colors.remove(colors.get(pick)); // pick is removed to prevent any duplicates
         }
+
+        difficulty = selectdifficulty();
 
         String playerColors = "";
 
@@ -150,7 +153,7 @@ public final class Main extends JFrame {
 
         // set points for each button
         int p = 0;
-        int max = 6;
+        int max = difficulty;
         while(p < points.length) {
             for(int i = 0; i < max; i++) {
                 int randRow = rand.nextInt(ROW);
@@ -379,5 +382,46 @@ public final class Main extends JFrame {
             }
         }
         return false;
+    }
+
+    // prompt player to choose the difficulty of the grid
+    private static int selectdifficulty() {
+        String difficulty = "";
+        int max = 0;
+
+        OUTER: while(true) {
+            System.out.println("\nSelect s grid difficulty");
+            System.out.println("1 - very easy");
+            System.out.println("2 - easy");
+            System.out.println("3 - medium");
+            System.out.println("4 - hard");
+            System.out.println("5 - very hard");
+            System.out.print("selection: ");
+            difficulty = input.next();  
+
+            if(difficulty.equals("1") || difficulty.equals("2") || difficulty.equals("3") || 
+               difficulty.equals("4") || difficulty.equals("5")) 
+            {
+                break OUTER;
+            }
+        } 
+        
+        if(difficulty.equals("1")) {
+            max = 0;
+        }
+        else if(difficulty.equals("2")) {
+            max = 3;
+        }
+        else if(difficulty.equals("3")) {
+            max = 8;
+        }
+        else if(difficulty.equals("4")) {
+            max = 12;
+        }
+        else if(difficulty.equals("5")) {
+            max = 15;
+        }
+
+        return max;
     }
 }
