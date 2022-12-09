@@ -158,7 +158,6 @@ public class Player {
             */
             if(this.lastPlayer) {
                 JOptionPane.showMessageDialog(null, Main.getEndMessage());
-                System.exit(0);
             }
         }
     }
@@ -168,7 +167,6 @@ public class Player {
         if(terrain[row][col].isGold()) {
             String message = PLAYER_NAME + " has found the gold! " + PLAYER_NAME + " wins the game!";
             JOptionPane.showMessageDialog(null, message);
-            System.exit(0);
         }
     }
 }
