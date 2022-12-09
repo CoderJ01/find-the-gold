@@ -32,11 +32,8 @@ public final class CPU extends Player {
 
                         keepScore(terrain, row, col);
                         terrain[row][col].setRevealed(true, colorObject());
-
-                        if(!isLastPlayer()) {
-                            endTurn();
-                        }
-
+                        endTurn();
+                        
                         if(terrain[row][col].isGold()) {
                             gameEnd(terrain, row, col);
                         } 
