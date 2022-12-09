@@ -302,28 +302,30 @@ public final class Main extends JFrame {
            Using fields and local variables in class Player to circumvent the issue is not feasable due to the particular manner this
            codebase is set up. The game will continue as it always has.
         */ 
-        players.get(0).setLastPlayer(true);
-        for(int row = 0; row < ROW; row++) {
-            for(int col = 0; col < COL; col++) {
-                terrain[row][col].addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                            if(players.get(0).getPoints() > 0) {
-                                TerrainButton button = (TerrainButton) e.getSource();
-                                int row = button.getRow();
-                                int col = button.getCol();
-                                players.get(0).keepScore(terrain, row, col);
-                                terrain[row][col].setRevealed(true, players.get(0).colorObject());
-                                if(terrain[row][col].isGold()) {
-                                    players.get(0).gameEnd(terrain, row, col);
+        if(players.size() == 1 && players.contains(players.get(0))) {
+            players.get(0).setLastPlayer(true);
+            for(int row = 0; row < ROW; row++) {
+                for(int col = 0; col < COL; col++) {
+                    terrain[row][col].addActionListener(new ActionListener() {
+                        public void actionPerformed(ActionEvent e) {
+                                if(players.get(0).getPoints() > 0) {
+                                    TerrainButton button = (TerrainButton) e.getSource();
+                                    int row = button.getRow();
+                                    int col = button.getCol();
+                                    players.get(0).keepScore(terrain, row, col);
+                                    terrain[row][col].setRevealed(true, players.get(0).colorObject());
+                                    if(terrain[row][col].isGold()) {
+                                        players.get(0).gameEnd(terrain, row, col);
+                                    }
+                                    players.get(0).endTurn();
                                 }
-                                players.get(0).endTurn();
                             }
                         }
-                    }
-                ); 
+                    ); 
+                }
             }
         }
-
+        
         // display if all players lose all points
         if(players.size() == 0) {
             JOptionPane.showMessageDialog(null, allPlayersLose);
