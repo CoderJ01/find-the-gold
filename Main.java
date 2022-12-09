@@ -332,6 +332,7 @@ public final class Main extends JFrame {
         // display if all players lose all points
         if(players.size() == 0) {
             JOptionPane.showMessageDialog(null, allPlayersLose);
+            System.exit(0);
         }
     }
 

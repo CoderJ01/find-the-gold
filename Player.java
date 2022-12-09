@@ -154,6 +154,7 @@ public class Player {
             */
             if(this.lastPlayer == true) {
                 JOptionPane.showMessageDialog(null, Main.getEndMessage());
+                System.exit(0);
             }
         }
     }
