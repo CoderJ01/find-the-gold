@@ -388,7 +388,7 @@ public final class Main extends JFrame {
         int max = 0;
 
         while(true) {
-            System.out.println("\nSelect s grid difficulty");
+            System.out.println("\nSelect a grid difficulty:");
             System.out.println("1 - very easy");
             System.out.println("2 - easy");
             System.out.println("3 - medium");
