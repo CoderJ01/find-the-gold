@@ -122,9 +122,19 @@ public class Player {
             colors[0] = new Color(255, 0, 143);
             colors[1] = new Color(0, 0, 0);
         }
+        // mint
+        else if(this.color.equals(labels[++i])) {
+            colors[0] = new Color(152, 251, 152);
+            colors[1] = new Color(0, 0, 0);
+        }
         // orange
         else if(this.color.equals(labels[++i])) {
             colors[0] = new Color(255, 95, 31);
+            colors[1] = new Color(0, 0, 0);
+        }
+        // pastel
+        else if(this.color.equals(labels[++i])) {
+            colors[0] = new Color(195, 177, 225);
             colors[1] = new Color(0, 0, 0);
         }
         // purple

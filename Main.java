@@ -19,7 +19,7 @@ public final class Main extends JFrame {
     private static List<Player> players = new ArrayList<>();
     private static List<String> colors = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
-    private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "orange", "purple", "red"};
+    private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "mint", "orange", "pastel", "purple", "red"};
     private static final String ALL_PLAYERS_LOSE = "All players lose the game!";
     private static int difficulty;
 
