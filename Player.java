@@ -6,7 +6,7 @@ import java.awt.Color;
 public class Player {
     // fields
     private final String PLAYER_NAME;
-    public int points;
+    private int points;
     private String color;
     private boolean turnOver;
     private boolean lastPlayer;

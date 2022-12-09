@@ -264,7 +264,6 @@ public final class Main extends JFrame {
     private static void gamePlay() {
         int c = 0;
         int maxPlayerIndex = (players.size() - 1);
-        players.get(0).points = 5;
         
         // loop through players for turn switching
         while(true) {
