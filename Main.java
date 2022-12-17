@@ -311,20 +311,21 @@ public final class Main extends JFrame {
                 for(int col = 0; col < COL; col++) {
                     terrain[row][col].addActionListener(new ActionListener() {
                         public void actionPerformed(ActionEvent e) {
-                            if(players.get(0).getPoints() > 0) {
-                                TerrainButton button = (TerrainButton) e.getSource();
-                                int row = button.getRow();
-                                int col = button.getCol();
-                                // display score only if button has not been selected
-                                if(!terrain[row][col].isRevealed()) {
-                                    players.get(0).keepScore(terrain, row, col);
+                                if(players.get(0).getPoints() > 0) {
+                                    TerrainButton button = (TerrainButton) e.getSource();
+                                    int row = button.getRow();
+                                    int col = button.getCol();
+                                    // display score only if button has not been selected
+                                    if(!terrain[row][col].isRevealed()) {
+                                        players.get(0).keepScore(terrain, row, col);
+                                    }
+                                    terrain[row][col].setRevealed(true, players.get(0).colorObject());
+                                    if(terrain[row][col].isGold()) {
+                                        players.get(0).gameEnd(terrain, row, col);
+                                        System.exit(0);
+                                    }
+                                    players.get(0).endTurn();
                                 }
-                                terrain[row][col].setRevealed(true, players.get(0).colorObject());
-                                if(terrain[row][col].isGold()) {
-                                    players.get(0).gameEnd(terrain, row, col);
-                                }
-                                players.get(0).endTurn();
-                            }
                         }
                     }); 
                 }
