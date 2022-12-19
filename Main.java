@@ -423,4 +423,22 @@ public final class Main extends JFrame {
 
         return max;
     }
+
+    private static void establishColors() {
+        Object[][] colors = 
+        {
+            {"blue"},
+            {"brown"},
+            {"cream"},
+            {"cyan"},
+            {"gray"},
+            {"green"},
+            {"magenta"},
+            {"mint"},
+            {"orange"},
+            {"pastel"},
+            {"purple"},
+            {"red"},
+        };
+    }
 }
