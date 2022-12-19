@@ -21,7 +21,7 @@ public final class Main extends JFrame {
     private static List<Player> players = new ArrayList<>();
     private static List<String> colors = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
-    private static String[] labels = {"blue", "brown", "cream", "cyan", "gray", "green", "magenta", "mint", "orange", "pastel", "purple", "red"};
+    private static Object[][] colorAssortment = establishColors();
     private static final String ALL_PLAYERS_LOSE = "All players lose the game!";
     private static int difficulty;
 
@@ -47,8 +47,8 @@ public final class Main extends JFrame {
 
     // colors
     private static void colors() {
-        for(int i = 0; i < labels.length; i++) {
-            colors.add(labels[i]);
+        for(int i = 0; i < colorAssortment.length; i++) {
+            colors.add((String)colorAssortment[i][0]);
         }
     }
 
@@ -255,8 +255,8 @@ public final class Main extends JFrame {
         return COL;
     }
 
-    public static String[] getLabels() {
-        return labels;
+    public static Object[][] getColors() {
+        return colorAssortment;
     }
 
     public static String getEndMessage() {
@@ -426,7 +426,7 @@ public final class Main extends JFrame {
         return max;
     }
 
-    private static void establishColors() {
+    private static Object[][] establishColors() {
         Color whiteText = new Color(255, 255, 225);
         Color blackText = new Color(0, 0, 0);
         Object[][] colors = 
@@ -444,5 +444,6 @@ public final class Main extends JFrame {
             {"purple", new Color(128, 0, 128), whiteText},
             {"red",  new Color(255, 0, 0), blackText},
         };
+        return colors;
     }
 }
