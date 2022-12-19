@@ -82,6 +82,7 @@ public class Player {
         }
     }
     
+    // determine the player's color based on selection
     public final Color[] colorObject() {
         Object[][] colors = Main.getColors();
         Color[] pickedColor = new Color[2];

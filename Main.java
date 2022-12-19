@@ -426,6 +426,7 @@ public final class Main extends JFrame {
         return max;
     }
 
+    // set up the colors that will be available for the game
     private static Object[][] establishColors() {
         Color whiteText = new Color(255, 255, 225);
         Color blackText = new Color(0, 0, 0);
