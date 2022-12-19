@@ -83,73 +83,18 @@ public class Player {
     }
     
     public final Color[] colorObject() {
-        String[] labels = Main.getLabels();
-        Color[] colors = new Color[2];
-        int i = 0; // increment to optimize addition of new colors in alphabetized list
-        
-        // blue
-        if(this.color.equals(labels[i])) {
-            colors[0] = new Color(0, 0, 225); // button color (e.g. blue)
-            colors[1] = new Color(255, 255, 225); // text color (either black or white)
-        }
-        // brown
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(100, 38, 14);
-            colors[1] = new Color(255, 255, 225); // white
-        }
-        // cream
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(255, 250, 160);
-            colors[1] = new Color(0, 0, 0); // black
-        }
-        // cyan
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(0, 255, 255);
-            colors[1] = new Color(0, 0, 0);
-        }
-        // gray
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(128, 128, 128);
-            colors[1] = new Color(255, 255, 225);
-        }
-        // green
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(0, 128, 0);
-            colors[1] = new Color(255, 255, 225);
-        }
-        // magenta
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(255, 0, 143);
-            colors[1] = new Color(0, 0, 0);
-        }
-        // mint
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(152, 251, 152);
-            colors[1] = new Color(0, 0, 0);
-        }
-        // orange
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(255, 95, 31);
-            colors[1] = new Color(0, 0, 0);
-        }
-        // pastel
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(195, 177, 225);
-            colors[1] = new Color(0, 0, 0);
-        }
-        // purple
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(128, 0, 128);
-            colors[1] = new Color(255, 255, 225);
-        }
-        // red
-        else if(this.color.equals(labels[++i])) {
-            colors[0] = new Color(255, 0, 0);
-            colors[1] = new Color(0, 0, 0);
-        }
-        return colors;
-    }
+        Object[][] colors = Main.getColors();
+        Color[] pickedColor = new Color[2];
 
+        for(int i = 0; i < colors.length; i++) {
+            if(this.color.equals((String) colors[i][0])) {
+                pickedColor[0] = (Color) colors[i][1];
+                pickedColor[1] = (Color) colors[i][2];
+            }
+        }
+        return pickedColor;
+    }
+    
     // allow player's score to be kept
     protected final void keepScore(TerrainButton[][] terrain, int row, int col) {
         if(!terrain[row][col].isRevealed()) {
