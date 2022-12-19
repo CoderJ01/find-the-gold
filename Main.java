@@ -1,15 +1,17 @@
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.Color;
 
 public final class Main extends JFrame {
     private static final int ROW = 15;
@@ -425,20 +427,22 @@ public final class Main extends JFrame {
     }
 
     private static void establishColors() {
+        Color whiteText = new Color(255, 255, 225);
+        Color blackText = new Color(0, 0, 0);
         Object[][] colors = 
         {
-            {"blue"},
-            {"brown"},
-            {"cream"},
-            {"cyan"},
-            {"gray"},
-            {"green"},
-            {"magenta"},
-            {"mint"},
-            {"orange"},
-            {"pastel"},
-            {"purple"},
-            {"red"},
+            {"blue", new Color(0, 0, 225), whiteText},
+            {"brown", new Color(100, 38, 14), whiteText},
+            {"cream", new Color(255, 250, 160), blackText},
+            {"cyan", new Color(0, 255, 255), blackText},
+            {"gray", new Color(128, 128, 128), whiteText},
+            {"green", new Color(0, 128, 0), whiteText},
+            {"magenta", new Color(255, 0, 143), blackText},
+            {"mint", new Color(152, 251, 152), blackText},
+            {"orange", new Color(255, 95, 31), blackText},
+            {"pastel", new Color(195, 177, 225), blackText},
+            {"purple", new Color(128, 0, 128), whiteText},
+            {"red",  new Color(255, 0, 0), blackText},
         };
     }
 }
