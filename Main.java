@@ -19,7 +19,7 @@ public final class Main extends JFrame {
     private static TerrainButton[][] terrain = new TerrainButton[ROW][COL];
     private static Random rand = new Random();
     private static List<Player> players = new ArrayList<>();
-    private static List<String> colors = new ArrayList<>();
+    private static List<String> colors = new ArrayList<>(); // use ArrayList to access remove method
     private static Scanner input = new Scanner(System.in);
     private static Object[][] colorAssortment = establishColors();
     private static final String ALL_PLAYERS_LOSE = "All players lose the game!";
