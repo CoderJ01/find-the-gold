@@ -11,5 +11,8 @@ Download the .jar file [here](https://github.com/CoderJ01/find-the-gold/blob/mai
 ## Screenshot of Window and Terminal
 ![Alt text](./assets/images/window-image.jpg?raw=true "Find the Gold")
 
+# Video
+[Video](https://youtu.be/wLFuqIHFIxc)
+
 ## Contribution
 Made by CoderJ01
