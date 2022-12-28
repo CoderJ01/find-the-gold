@@ -88,11 +88,12 @@ public final class Main extends JFrame {
 
         String playerColors = "";
 
+        // display each player's color
         for(int i = 0; i < players.size(); i++) {
             playerColors += players.get(i).getPlayerName() + " has selected " + players.get(i).getColor() + "\n";
         }
 
-        JOptionPane.showMessageDialog(null, "Press OK to confirm that you are ready to play the game."); // display each player's color
+        JOptionPane.showMessageDialog(null, "Press OK to confirm that you are ready to play the game."); 
         System.out.println();
         System.out.println(playerColors);
     }
@@ -129,6 +130,7 @@ public final class Main extends JFrame {
 
     // set the amount of points for each button
     private static void setButtonPoints() {
+        // set the points for the gold button
         for(int row = 0; row < ROW; row++) {
             for(int col = 0; col < COL; col++) {
                 if(terrain[row][col].isGold()) {
@@ -153,7 +155,7 @@ public final class Main extends JFrame {
         points[11] = -20;
         points[12] = -10;
 
-        // set points for each button
+        // set points for the non-gold buttons
         int p = 0;
         int max = difficulty;
         while(p < points.length) {
