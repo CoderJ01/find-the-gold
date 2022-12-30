@@ -401,29 +401,28 @@ public final class Main extends JFrame {
             System.out.print("selection: ");
             difficulty = input.next();  
 
-            if(difficulty.equals("1") || difficulty.equals("2") || difficulty.equals("3") || 
-               difficulty.equals("4") || difficulty.equals("5")) 
-            {
+            if(difficulty.equals("1")) {
+                max = 0;
                 break;
             }
+            else if(difficulty.equals("2")) {
+                max = 3;
+                break;
+            }
+            else if(difficulty.equals("3")) {
+                max = 8;
+                break;
+            }
+            else if(difficulty.equals("4")) {
+                max = 12;
+                break;
+            }
+            else if(difficulty.equals("5")) {
+                max = 15;
+                break;
+            }    
         } 
         
-        if(difficulty.equals("1")) {
-            max = 0;
-        }
-        else if(difficulty.equals("2")) {
-            max = 3;
-        }
-        else if(difficulty.equals("3")) {
-            max = 8;
-        }
-        else if(difficulty.equals("4")) {
-            max = 12;
-        }
-        else if(difficulty.equals("5")) {
-            max = 15;
-        }
-
         return max;
     }
 
