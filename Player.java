@@ -68,6 +68,7 @@ public class Player {
                                 TerrainButton button = (TerrainButton) e.getSource();
                                 int row = button.getRow();
                                 int col = button.getCol();
+                                // show points for non-CPU player only if button is not revealed
                                 if(!terrain[row][col].isRevealed()) {
                                     keepScore(terrain, row, col);
                                 }
