@@ -68,7 +68,9 @@ public class Player {
                                 TerrainButton button = (TerrainButton) e.getSource();
                                 int row = button.getRow();
                                 int col = button.getCol();
-                                keepScore(terrain, row, col);
+                                if(!terrain[row][col].isRevealed()) {
+                                    keepScore(terrain, row, col);
+                                }
                                 terrain[row][col].setRevealed(true, colorObject());
                                 if(terrain[row][col].isGold()) {
                                     gameEnd(terrain, row, col);
